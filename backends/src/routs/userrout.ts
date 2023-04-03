@@ -7,6 +7,7 @@ userrout.post("/login",login);
 userrout.post('/forgot',forgot)
 userrout.get('/reset',reset)
 userrout.get("/dash",validate,(req,res)=>{
+
     res.status(200).json({message:"logedin"})
   })
 export default userrout;

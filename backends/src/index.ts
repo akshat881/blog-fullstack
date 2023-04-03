@@ -11,11 +11,12 @@ const port=process.env.PORT;
 const cors=require("cors");
 
 const corsOptions ={
-   origin:'http://127.1.1.0:3000', 
+   origin:'http://127.0.0.1:3000', 
    credentials:true,           
    optionSuccessStatus:200,
    methods:["GET","POST"]
 }
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({extended:false}));

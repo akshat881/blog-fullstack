@@ -1,10 +1,12 @@
 import { Request, Response } from 'express'
 import bcrypt from 'bcrypt'
 import dotenv from "dotenv"
+
 import * as jwt from 'jsonwebtoken'
 import { mail } from "../helper/index";
 import user_model from '../model/user'
 import otpmodals from "../model/otp";
+
 dotenv.config();
 
 export const signup = async (req: Request, res: Response) => {
@@ -46,7 +48,9 @@ export const login = async (req: Request, res: Response) => {
 
                 jwt.sign(req.body, process.env.PRIVATE_KEY, function (err, token) {
                     console.log(token);
-                    res.cookie(`usersesion`, token,{ maxAge: 900000, httpOnly: true });
+                    res.cookie(`usersesion`, token,{
+                      httpOnly:true
+                    });
                     res.status(200).json({message: `login succesfull with tokken`,icon:"success"})
                 });
 
@@ -73,13 +77,13 @@ export const forgot = async (req: Request, res: Response) => {
       if (find===null) {
         res.status(201).json({message:"user dosent exist please check your mail",icon:"warning"});
       } else {
-  
-        const url = `http://localhost:5000/reset?email=${req.body.email}`;
+  const expiretime=new Date().getTime() + 60000
+        const url = `http://127.0.0.1:3000/reset?email=${req.body.email}/${expiretime}`;
         const otp = Math.floor(100000 + Math.random() * 900000);
         const otpsave = new otpmodals({
           email: find.email,
           otp: otp,
-          expaire: new Date().getTime() + 60000,
+          expaire: expiretime,
         });
         const otpfind = await otpmodals.findOne({ email: req.body.email });
         if (otpfind===null) {
@@ -93,7 +97,7 @@ export const forgot = async (req: Request, res: Response) => {
             await otpmodals
             .updateMany(
               { email: req.body.email },
-              { $set: { otp: otp, expaire: new Date().getTime() + 60000 } }
+              { $set: { otp: otp, expaire: expiretime} }
             )
             .then((data) => {
               if (data) {

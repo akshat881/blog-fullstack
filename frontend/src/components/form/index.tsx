@@ -1,6 +1,6 @@
 import {useForm,SubmitHandler} from 'react-hook-form'
 import {useQuery,useMutation} from 'react-query'
-import {Link} from "react-router-dom";
+import {Link,useNavigate} from "react-router-dom";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { Container, Card,Input, Form, H3, Text,H2, Button } from 'styled/form'
@@ -12,6 +12,7 @@ const Forms=()=>{
 
   const { register, handleSubmit} = useForm<Formuser>();
   const myData=usePostdata()
+  const navigate = useNavigate();
   // const {mutate,data:any} = useMutation((userdata)=>{
   //   usePostdata(userdata)
   // })
@@ -30,7 +31,9 @@ const Forms=()=>{
         showConfirmButton: false,
         timer: 1500
       })
-   
+   if(data.status===200){
+    navigate("/login")
+   }
 
   };
 

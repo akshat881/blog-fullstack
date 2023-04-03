@@ -2,6 +2,8 @@ import Forms from 'components/form'
 import Login from 'components/login'
 import Forgot from 'components/forgot'
 import Dash from 'components/dashboard'
+import Error from 'components/error'
+import Reset from 'components/reset'
 const routespath=[
     {
         path:"/",
@@ -24,6 +26,18 @@ const routespath=[
     {
         path:"/dash",
         component:<Dash/>,
+        restricted:false
+
+    },
+    {
+        path:"*",
+        component:<Error/>,
+        restricted:false
+
+    },
+    {
+        path:"/reset",
+        component:<Reset/>,
         restricted:false
 
     }
