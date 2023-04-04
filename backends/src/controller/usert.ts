@@ -48,7 +48,7 @@ export const login = async (req: Request, res: Response) => {
 
                 jwt.sign(req.body, process.env.PRIVATE_KEY, function (err, token) {
                     console.log(token);
-                    res.cookie(`usersesion`, token,{
+                    res.cookie("usersesion", token,{
                       httpOnly:true
                     });
                     res.status(200).json({message: `login succesfull with tokken`,icon:"success"})

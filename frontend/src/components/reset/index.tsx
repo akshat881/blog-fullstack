@@ -22,12 +22,7 @@ const Reset=()=>{
     // Post("/",data)
  
        const data=await myData("/reset",userdata);
-       console.log(data.status);
-       if(data.status===200){
-        // navigate("/dash")
-       }
-    
-      
+       console.log(data.status); 
       Swal.fire({
         position: 'top-end',
         icon: data.data.icon,

@@ -2,7 +2,6 @@ import {useForm,SubmitHandler} from 'react-hook-form'
 import {useQuery,useMutation} from 'react-query'
 import {useNavigate,Link} from "react-router-dom";
 import Swal from 'sweetalert2'
-import Cookies from 'js-cookie';
 import { Container, Card,Input, Form, H3, Text,H2, Button } from 'styled/form'
 import {Formuser} from 'interface'
 // import Post from 'api/post'
