@@ -4,6 +4,7 @@ import {useNavigate,Link} from "react-router-dom";
 import Swal from 'sweetalert2'
 import { Container, Card,Input, Form, H3, Text,H2, Button } from 'styled/form'
 import {Formuser} from 'interface'
+import axios from 'axios';
 // import Post from 'api/post'
 import {usePostdata} from 'hooks/index'
 import Bg from 'Assets/Logo/WITS@4x.svg'
@@ -18,25 +19,58 @@ const Login=()=>{
   const onSubmit: SubmitHandler<Formuser> =async(userdata)=>{
     // const data=Postdata("/",userdata)
     // Post("/",data)
- 
-       const data=await myData("/login",userdata);
-       console.log(data);
-       if(data.status===200){
-         navigate("/dash")
 
-       }
+
+
+    axios.defaults.withCredentials = true;
+    const data = await axios.post('http://127.0.0.1:4000/login', userdata,{withCredentials:true});
     
+    if(data.status===200){
+      navigate("/dash")
+
+    }
+
+    
+
+
+
+
+
+  //  await fetch("http://127.0.0.1:4000/login", {
+  //   method: 'POST',
+  //   body: JSON.stringify(userdata),
+  //   headers: {
+  //     'Content-Type': 'application/json'
+  //   } 
+  //   }).then(response => {
+  //     console.log(response);
       
-      Swal.fire({
-        position: 'top-end',
-        icon: data.data.icon,
-        title: `${data.data.message}`,
-        showConfirmButton: false,
-        timer: 1500
-      })
+  //     // Assuming the API returns a cookie named 'token'
+  //     document.cookie = `token=${response.headers.get('Set-Cookie')}`;
+  //   })
+  //   .catch(error => {
+  //     console.error('Error:', error);
+  //   });
+  //   .then(function (data) {
+  //   console.log(data)
+  //  console.log("checking", data.headers.get('Set-Cookie'));
+   
+  //   });
+  //     //  const data=await myData("/login",userdata);
+  //     //  console.log(data);
+     
+    
+  }
+  //     // Swal.fire({
+  //     //   position: 'top-end',
+  //     //   icon: data.data.icon,
+  //     //   title: `${data.data.message}`,
+  //     //   showConfirmButton: false,
+  //     //   timer: 1500
+  //     // })
    
 
-  };
+  // };
 
     return( 
       <>
@@ -47,10 +81,9 @@ const Login=()=>{
               <H2>Login With WIL</H2>
               <H3>New User? <Link to="/" style={{textDecoration:"none"}}><Text style={{margin:"0",fontWeight:"600"}}> Create an Account</Text></Link></H3>
               <Input {...register("email")} type="text" placeholder="Email Address"/>
-              <div style={{position:"relative"}}>
+   
               <Input  {...register("password")} type="password"  placeholder="Password"/>
-              <i className="far fa-eye" id="togglePassword" style={{cursor:"pointer",position:"absolute",top:"22.4vw",right:"3.6vw",zIndex:"-5"}}></i>
-              </div>
+
                 <Link to="/forgot" style={{textDecoration:"none"}}><Text>Forgot Password?</Text></Link>
               <Button>Login</Button>
               </Card>

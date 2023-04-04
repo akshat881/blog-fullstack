@@ -5,9 +5,9 @@ import {signup,login,forgot,reset} from '../controller/usert'
 userrout.post("/",signup);
 userrout.post("/login",login);
 userrout.post('/forgot',forgot)
-userrout.get('/reset',reset)
-userrout.get("/dash",validate,(req,res)=>{
+userrout.post('/reset',reset)
+userrout.get("/auth",validate,(req,res)=>{
 
-    res.status(200).json({message:"logedin"})
+    res.status(200).json({message:true})
   })
 export default userrout;

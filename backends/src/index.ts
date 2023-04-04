@@ -1,5 +1,5 @@
 import express from 'express'
-import cookieParser from 'cookie-parser'
+const cookieParser = require('cookie-parser');
 import dotenv from "dotenv"
 const app=express();
 import con from './db/connection'

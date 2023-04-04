@@ -26,7 +26,7 @@ const routespath=[
     {
         path:"/dash",
         component:<Dash/>,
-        restricted:false
+        restricted:true
 
     },
     {

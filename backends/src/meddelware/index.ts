@@ -9,7 +9,8 @@ dotenv.config();
         const token = req.cookies.usersesion;
         jwt.verify(token,process.env.PRIVATE_KEY,(err, decoded) => {
             if (err) {
-              return res.status(401).json({ message: 'Invalid token' });}
+              return res.status(401).json({ message:false });
+            }
              
             })
          

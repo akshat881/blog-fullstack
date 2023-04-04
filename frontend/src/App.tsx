@@ -17,6 +17,8 @@ const queryClient = new QueryClient({
     },
   },
 })
+import ProtectedRoutes from "route/private";
+import PublicRoutes from "route/public";
 function App() {
   return (
 <Router>
@@ -26,7 +28,7 @@ function App() {
       routespath.map((data,index)=>{
         const {path,component,restricted}=data;
         return(
-          <Route key={index} path={path} element={component}/>
+          <Route key={index} path={path} element={restricted?(<ProtectedRoutes component={component}/>):(<PublicRoutes component={component}/> )}/>
         )
       })
     }

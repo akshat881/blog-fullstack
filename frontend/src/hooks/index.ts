@@ -13,7 +13,7 @@ useQuery(url,data)
             headers: {
               'Content-Type': 'application/json'
             }
-        }
+        }, 
     )
     }
  

@@ -48,9 +48,8 @@ export const login = async (req: Request, res: Response) => {
 
                 jwt.sign(req.body, process.env.PRIVATE_KEY, function (err, token) {
                     console.log(token);
-                    res.cookie("usersesion", token,{
-                      httpOnly:true
-                    });
+                    res.cookie('usersesion', token, { maxAge: 900000, httpOnly: true });
+                    // res.send('Cookie has been set!');
                     res.status(200).json({message: `login succesfull with tokken`,icon:"success"})
                 });
 
@@ -77,7 +76,7 @@ export const forgot = async (req: Request, res: Response) => {
       if (find===null) {
         res.status(201).json({message:"user dosent exist please check your mail",icon:"warning"});
       } else {
-  const expiretime=new Date().getTime() + 60000
+  const expiretime=new Date().getTime() + 1000000
         const url = `http://127.0.0.1:3000/reset?email=${req.body.email}/${expiretime}`;
         const otp = Math.floor(100000 + Math.random() * 900000);
         const otpsave = new otpmodals({
@@ -114,7 +113,10 @@ export const forgot = async (req: Request, res: Response) => {
   };
   export const reset = async (req: Request, res: Response) => {
     try {
-      const mail=req.query.email 
+      const mail=req.query.email;
+       console.log(mail)
+      // const final=mail.split("/")
+
       const find = await otpmodals.findOne({ email: req.query.email });
       const { otp, password } = req.body;
       if(find===null){
