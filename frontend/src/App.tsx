@@ -1,6 +1,8 @@
 import { BrowserRouter as Router,Route,Routes } from "react-router-dom";
 import routespath from "route/index"
 import { ReactQueryDevtools } from 'react-query/devtools'
+import ProtectedRoutes from "route/private";
+import PublicRoutes from "route/public";
 import {
   useQuery,
   useMutation,
@@ -17,8 +19,7 @@ const queryClient = new QueryClient({
     },
   },
 })
-import ProtectedRoutes from "route/private";
-import PublicRoutes from "route/public";
+
 function App() {
   return (
 <Router>

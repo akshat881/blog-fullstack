@@ -4,6 +4,7 @@ import Forgot from 'components/forgot'
 import Dash from 'components/dashboard'
 import Error from 'components/error'
 import Reset from 'components/reset'
+import Sidnav from 'components/sidenavbar'
 const routespath=[
     {
         path:"/",
@@ -25,8 +26,8 @@ const routespath=[
     },
     {
         path:"/dash",
-        component:<Dash/>,
-        restricted:true
+        component:<Sidnav/>,
+        restricted:false
 
     },
     {
