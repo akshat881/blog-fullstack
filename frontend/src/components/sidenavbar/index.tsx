@@ -1,6 +1,6 @@
 import Bg from 'Assets/Logo/WITS@4x.svg'
-import {Ul2,Newslatest,Newcard,Newsupdate,News,Cardsinner,Container,Link,Ul,List,Hr,Text,Head,Upernav,Navitem,Navtext,Sideitem,Input,Mainsection,Cards} from 'styled/sidenavbar';
-import { faNewspaper,faBars,faFilm,faMusic,faPlane,faUser, faCircleUser, faGear, faLifeRing, faArrowRightFromBracket, faComments, faBell, faMagnifyingGlass, faArrowRight} from '@fortawesome/free-solid-svg-icons';
+import {Span,Tag,Ul2,Newslatest,Newcard,Newsupdate,News,Cardsinner,Container,Link,Ul,List,Hr,Text,Head,Upernav,Navitem,Navtext,Sideitem,Input,Mainsection,Cards} from 'styled/sidenavbar';
+import { faNewspaper,faBars,faFilm,faMusic,faPlane,faUser, faCircleUser, faGear, faLifeRing, faArrowRightFromBracket, faComments, faBell, faMagnifyingGlass, faArrowRight, faPlus, faHeart} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -125,54 +125,44 @@ const Sidnav=()=>{
        <Cards>
 <Cardsinner>
 <News>
- <Newcard>
+ 
+<Newcard>
+  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="600px" height="500px"alt="" />
+ </Newcard>
+<Newcard>
   <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="500px" height="200px"alt="" />
   <Text>sports</Text>
   <Text>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
-  <Hr/>
+  <Hr style={{marginTop:"2%"}}/>
+  <Tag style={{marginTop:"2vw",width:"90%",alignItems:"center",justifyContent:"space-evenly"}}>
+  <FontAwesomeIcon icon={faCircleUser} style={{color: "#787878",marginLeft:"3%"}} />
+    <Span style={{margin:"0",marginLeft:"3%"}}>AKSHAT</Span>
+    <FontAwesomeIcon icon={faHeart} style={{color: "#696969",marginLeft:"auto"}} />
+  </Tag>
  </Newcard>
- <Newcard>
+<Newcard>
+  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="700px" height="200px"alt="" />
+  <Text>sports</Text>
+  <Text>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
+  <Hr style={{marginTop:"2%"}}/>
+  <Tag style={{marginTop:"2vw",width:"90%",alignItems:"center",justifyContent:"space-evenly"}}>
+  <FontAwesomeIcon icon={faCircleUser} style={{color: "#787878",marginLeft:"3%"}} />
+    <Span style={{margin:"0",marginLeft:"3%"}}>AKSHAT</Span>
+    <FontAwesomeIcon icon={faHeart} style={{color: "#696969",marginLeft:"auto"}} />
+  </Tag>
+ </Newcard>
+<Newcard>
   <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="500px" height="200px"alt="" />
   <Text>sports</Text>
   <Text>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
-  <Hr/>
+  <Hr style={{marginTop:"2%"}}/>
+  <Tag style={{marginTop:"2vw",width:"90%",alignItems:"center",justifyContent:"space-evenly"}}>
+  <FontAwesomeIcon icon={faCircleUser} style={{color: "#787878",marginLeft:"3%"}} />
+    <Span style={{margin:"0",marginLeft:"3%"}}>AKSHAT</Span>
+    <FontAwesomeIcon icon={faHeart} style={{color: "#696969",marginLeft:"auto"}} />
+  </Tag>
  </Newcard>
- <Newcard>
-  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="500px" height="200px"alt="" />
-  <Text>sports</Text>
-  <Text>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
-  <Hr/>
- </Newcard>
- <Newcard>
-  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="500px" height="200px"alt="" />
-  <Text>sports</Text>
-  <Text>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
-  <Hr/>
- </Newcard>
- <Newcard>
-  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="500px" height="200px"alt="" />
-  <Text>sports</Text>
-  <Text>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
-  <Hr/>
- </Newcard>
- <Newcard>
-  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="500px" height="200px"alt="" />
-  <Text>sports</Text>
-  <Text>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
-  <Hr/>
- </Newcard>
- <Newcard>
-  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="500px" height="200px"alt="" />
-  <Text>sports</Text>
-  <Text>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
-  <Hr/>
- </Newcard>
- <Newcard>
-  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="500px" height="200px"alt="" />
-  <Text>sports</Text>
-  <Text>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
-  <Hr/>
- </Newcard>
+ 
 </News>
 <Newsupdate>
 <Ul2>
@@ -181,7 +171,7 @@ const Sidnav=()=>{
 <FontAwesomeIcon icon={faArrowRight} style={{color: "#707070",}} />
 
 </Head >
-  <Hr/>
+  <Hr style={{marginTop:"6%"}}/>
 <Newslatest>
 <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" style={{borderRadius:"5px"}}width="100px" height="100px"alt="" />
 <Text>
@@ -210,21 +200,31 @@ const Sidnav=()=>{
 <Text>Tiger Woods in a Stirring Return to the Top,Capture the Master at 43</Text>
 </Text>
 </Newslatest>
-<Newslatest>
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" style={{borderRadius:"5px"}}width="100px" height="100px"alt="" />
-<Text>
-<Text>Sport</Text>
-<Text>Tiger Woods in a Stirring Return to the Top,Capture the Master at 43</Text>
-</Text>
-</Newslatest>
-<Newslatest>
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" style={{borderRadius:"5px"}}width="100px" height="100px"alt="" />
-<Text>
-<Text>Sport</Text>
-<Text>Tiger Woods in a Stirring Return to the Top,Capture the Master at 43</Text>
-</Text>
-</Newslatest>
+
 </Ul2>
+<Ul2 style={{marginTop:"6%",height:"20vh"}}>
+<Head>
+<Text>Popular Tags</Text>
+<FontAwesomeIcon icon={faPlus} style={{color: "#575757",}} />
+
+</Head >
+  <Hr style={{marginTop:"6%"}}/>
+<Tag>
+  <Span>Politics</Span>
+  <Span>Advertising</Span>
+  <Span>News</Span>
+  <Span>Development</Span>
+  <Span>Design</Span>
+  <Span>Finance</Span>
+  <Span>Football</Span>
+  <Span>Future</Span>
+  <Span>Travel</Span>
+  <Span>Style</Span>
+  <Span>Real Estate</Span>
+</Tag>
+
+</Ul2>
+
 </Newsupdate>
 </Cardsinner>
        </Cards>

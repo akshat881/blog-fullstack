@@ -88,30 +88,29 @@ border-radius: 5px;
   position:absolute;
   right:0;
   background: #F4F6F8;
-  height: 100vw;
+ 
   width: calc(100% - 253px);
   transition: all .5s ease-in-out;
  `
  export const Cards=styled.div` 
- height:100vh;
  padding:2%;
  `
 export const Cardsinner=styled.div` 
-height:100vh;
 display:flex;
 
 `
 export const News=styled.div` 
 display:flex;
+
 flex-direction:row;
 flex-wrap:wrap;
-height:100vh;
-width:90%;
+width:100%;
 `
 export const Newsupdate=styled.div` 
-/* border:2px solid blue; */
+
 height:100vh;
 width:40%;
+
 `
 export const Newslatest=styled.div` 
 margin-top:3%;
@@ -120,16 +119,32 @@ align-items:center;
 width:100%;
 `
 export const Ul2=styled.div`
-height:100vh;
-background:#ffff;
-border-radius:10px;
+
 padding:5%;
+border-radius:10px;
+background:#ffffff;
  `
 export const Newcard=styled.div`
-margin:1%;
+position:relative;
+margin-left:2%;
 background:#fff;
-width:40%;
-height:40%;
+width:27vw;
+height:20vw;
 overflow:hidden;
+border-radius:5px;
+`
+export const Tag=styled.div`
+padding:2%;
+display:flex;
+flex-wrap:wrap;
+width:100%;
+`
+export const Span=styled.span`
+margin:5px;
+font-size:0.7vw;
+padding:2%;
+color:#727C89;
+background:#E2E7ED;
 border-radius:10px;
+cursor:pointer;
 `

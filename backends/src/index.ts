@@ -11,7 +11,7 @@ const port=process.env.PORT;
 const cors=require("cors");
 
 const corsOptions ={
-   origin:'http://127.0.0.1:3000', 
+   origin:'*', 
    credentials:true,           
    optionSuccessStatus:200,
    methods:["GET","POST"]

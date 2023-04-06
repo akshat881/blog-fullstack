@@ -3,13 +3,14 @@ import { useEffect, useState } from "react";
 
 export const Check=()=>{
   const [dataa, setData] = useState(null);
-const fetchfun=async()=>{
 
-    const {data} = await axios.get('http://127.0.0.1:4000/auth',{headers:{Accept:"appllication/json","Content-Type":"appllication/json"},withCredentials:true});
+  useEffect(() => {
+    const fetchfun=async()=>{
+    const {data} = await axios.get('http://localhost:4000/auth',{headers:{Accept:"appllication/json","Content-Type":"appllication/json"},withCredentials:true});
     setData(data.message)
 }
-  // fetchfun()
-
+   fetchfun()
+},[])
     if(dataa===true){
      return true
     }

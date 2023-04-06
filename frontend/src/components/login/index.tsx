@@ -23,7 +23,7 @@ const Login=()=>{
 
 
     axios.defaults.withCredentials = true;
-    const data = await axios.post('http://127.0.0.1:4000/login', userdata,{withCredentials:true});
+    const data = await axios.post('http://localhost:4000/login', userdata,{withCredentials:true});
     
     if(data.status===200){
       navigate("/dash")
