@@ -46,9 +46,9 @@ align-items: center;
    
  `
  export const Upernav=styled.div`
-  position: absolute;
+  position: fixed;
   background: #fff;
-  height: 10.3vh;
+  height: 4.75vw;
   top: 0;
   right: 0;
   width: calc(100% - 253px);
@@ -82,4 +82,54 @@ padding:0.8rem;
 width: 100%;
 border: 2px solid #EEF1F2;
 border-radius: 5px;
-   `
+`
+  export const Mainsection=styled.div`
+  margin-top:4.85vw;
+  position:absolute;
+  right:0;
+  background: #F4F6F8;
+  height: 100vw;
+  width: calc(100% - 253px);
+  transition: all .5s ease-in-out;
+ `
+ export const Cards=styled.div` 
+ height:100vh;
+ padding:2%;
+ `
+export const Cardsinner=styled.div` 
+height:100vh;
+display:flex;
+
+`
+export const News=styled.div` 
+display:flex;
+flex-direction:row;
+flex-wrap:wrap;
+height:100vh;
+width:90%;
+`
+export const Newsupdate=styled.div` 
+/* border:2px solid blue; */
+height:100vh;
+width:40%;
+`
+export const Newslatest=styled.div` 
+margin-top:3%;
+display:flex;
+align-items:center;
+width:100%;
+`
+export const Ul2=styled.div`
+height:100vh;
+background:#ffff;
+border-radius:10px;
+padding:5%;
+ `
+export const Newcard=styled.div`
+margin:1%;
+background:#fff;
+width:40%;
+height:40%;
+overflow:hidden;
+border-radius:10px;
+`

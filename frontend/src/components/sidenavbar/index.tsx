@@ -1,6 +1,6 @@
 import Bg from 'Assets/Logo/WITS@4x.svg'
-import { Container,Link,Ul,List,Hr,Text,Head,Upernav,Navitem,Navtext,Sideitem,Input} from 'styled/sidenavbar';
-import { faNewspaper,faBars,faFilm,faMusic,faPlane,faUser, faCircleUser, faGear, faLifeRing, faArrowRightFromBracket, faComments, faBell, faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
+import {Ul2,Newslatest,Newcard,Newsupdate,News,Cardsinner,Container,Link,Ul,List,Hr,Text,Head,Upernav,Navitem,Navtext,Sideitem,Input,Mainsection,Cards} from 'styled/sidenavbar';
+import { faNewspaper,faBars,faFilm,faMusic,faPlane,faUser, faCircleUser, faGear, faLifeRing, faArrowRightFromBracket, faComments, faBell, faMagnifyingGlass, faArrowRight} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -112,8 +112,8 @@ const Sidnav=()=>{
           </Navtext>
           
           <Sideitem>
-          <FontAwesomeIcon icon={faBell} style={{color: "#6e6e6e",borderRight:""}} />
-          <FontAwesomeIcon icon={faComments} style={{color: "#757575",}} />
+          <FontAwesomeIcon icon={faBell} style={{width:"60px",color: "#6e6e6e",borderRight:"2px solid  #EEF1F2 ",borderLeft:"2px solid  #EEF1F2 "}} />
+          <FontAwesomeIcon icon={faComments} style={{width:"60px",color: "#757575",borderRight:"2px solid  #EEF1F2 ",borderLeft:"2px solid  #EEF1F2 "}} />
            <Input placeholder='Type to search'/>
            <div style={{position:"relative"}} >
            <FontAwesomeIcon icon={faMagnifyingGlass} style={{color: "#707070",position:"absolute",top:"-8px",right:"35px"}} />
@@ -121,6 +121,114 @@ const Sidnav=()=>{
           </Sideitem>
         </Navitem>
       </Upernav>
+      <Mainsection>
+       <Cards>
+<Cardsinner>
+<News>
+ <Newcard>
+  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="500px" height="200px"alt="" />
+  <Text>sports</Text>
+  <Text>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
+  <Hr/>
+ </Newcard>
+ <Newcard>
+  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="500px" height="200px"alt="" />
+  <Text>sports</Text>
+  <Text>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
+  <Hr/>
+ </Newcard>
+ <Newcard>
+  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="500px" height="200px"alt="" />
+  <Text>sports</Text>
+  <Text>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
+  <Hr/>
+ </Newcard>
+ <Newcard>
+  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="500px" height="200px"alt="" />
+  <Text>sports</Text>
+  <Text>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
+  <Hr/>
+ </Newcard>
+ <Newcard>
+  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="500px" height="200px"alt="" />
+  <Text>sports</Text>
+  <Text>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
+  <Hr/>
+ </Newcard>
+ <Newcard>
+  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="500px" height="200px"alt="" />
+  <Text>sports</Text>
+  <Text>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
+  <Hr/>
+ </Newcard>
+ <Newcard>
+  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="500px" height="200px"alt="" />
+  <Text>sports</Text>
+  <Text>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
+  <Hr/>
+ </Newcard>
+ <Newcard>
+  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="500px" height="200px"alt="" />
+  <Text>sports</Text>
+  <Text>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
+  <Hr/>
+ </Newcard>
+</News>
+<Newsupdate>
+<Ul2>
+<Head>
+<Text>Trending News</Text>
+<FontAwesomeIcon icon={faArrowRight} style={{color: "#707070",}} />
+
+</Head >
+  <Hr/>
+<Newslatest>
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" style={{borderRadius:"5px"}}width="100px" height="100px"alt="" />
+<Text>
+<Text>Sport</Text>
+<Text>Tiger Woods in a Stirring Return to the Top,Capture the Master at 43</Text>
+</Text>
+</Newslatest>
+<Newslatest>
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" style={{borderRadius:"5px"}}width="100px" height="100px"alt="" />
+<Text>
+<Text>Sport</Text>
+<Text>Tiger Woods in a Stirring Return to the Top,Capture the Master at 43</Text>
+</Text>
+</Newslatest>
+<Newslatest>
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" style={{borderRadius:"5px"}}width="100px" height="100px"alt="" />
+<Text>
+<Text>Sport</Text>
+<Text>Tiger Woods in a Stirring Return to the Top,Capture the Master at 43</Text>
+</Text>
+</Newslatest>
+<Newslatest>
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" style={{borderRadius:"5px"}}width="100px" height="100px"alt="" />
+<Text>
+<Text>Sport</Text>
+<Text>Tiger Woods in a Stirring Return to the Top,Capture the Master at 43</Text>
+</Text>
+</Newslatest>
+<Newslatest>
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" style={{borderRadius:"5px"}}width="100px" height="100px"alt="" />
+<Text>
+<Text>Sport</Text>
+<Text>Tiger Woods in a Stirring Return to the Top,Capture the Master at 43</Text>
+</Text>
+</Newslatest>
+<Newslatest>
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" style={{borderRadius:"5px"}}width="100px" height="100px"alt="" />
+<Text>
+<Text>Sport</Text>
+<Text>Tiger Woods in a Stirring Return to the Top,Capture the Master at 43</Text>
+</Text>
+</Newslatest>
+</Ul2>
+</Newsupdate>
+</Cardsinner>
+       </Cards>
+      </Mainsection>
         </>
     )
 }
