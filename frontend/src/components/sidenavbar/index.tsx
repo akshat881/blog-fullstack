@@ -1,5 +1,5 @@
 import Bg from 'Assets/Logo/WITS@4x.svg'
-import {Span,Tag,Ul2,Newslatest,Newcard,Newsupdate,News,Cardsinner,Container,Link,Ul,List,Hr,Text,Head,Upernav,Navitem,Navtext,Sideitem,Input,Mainsection,Cards} from 'styled/sidenavbar';
+import {Cardcontent,Span,Tag,Ul2,Newslatest,Newcard,Newsupdate,News,Cardsinner,Container,Link,Ul,List,Hr,Text,Head,Upernav,Navitem,Navtext,Sideitem,Input,Mainsection,Cards, Cardimg} from 'styled/sidenavbar';
 import { faNewspaper,faBars,faFilm,faMusic,faPlane,faUser, faCircleUser, faGear, faLifeRing, faArrowRightFromBracket, faComments, faBell, faMagnifyingGlass, faArrowRight, faPlus, faHeart} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -127,40 +127,56 @@ const Sidnav=()=>{
 <News>
  
 <Newcard>
-  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="600px" height="500px"alt="" />
- </Newcard>
-<Newcard>
-  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="500px" height="200px"alt="" />
-  <Text>sports</Text>
-  <Text>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
-  <Hr style={{marginTop:"2%"}}/>
-  <Tag style={{marginTop:"2vw",width:"90%",alignItems:"center",justifyContent:"space-evenly"}}>
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="600px" height="250px"alt="" />
+  <Cardcontent>
+  <Text style={{lineHeight:"2rem"}}>Sports</Text>
+  <Text style={{fontSize:"1.1rem"}}>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
+  <Hr style={{marginTop:"1%"}}/>
+  <Tag style={{marginTop:"0",width:"90%",alignItems:"center",justifyContent:"space-evenly"}}>
   <FontAwesomeIcon icon={faCircleUser} style={{color: "#787878",marginLeft:"3%"}} />
-    <Span style={{margin:"0",marginLeft:"3%"}}>AKSHAT</Span>
+<Text>Akshat</Text>
     <FontAwesomeIcon icon={faHeart} style={{color: "#696969",marginLeft:"auto"}} />
   </Tag>
+  </Cardcontent>
  </Newcard>
-<Newcard>
-  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="700px" height="200px"alt="" />
-  <Text>sports</Text>
-  <Text>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
-  <Hr style={{marginTop:"2%"}}/>
-  <Tag style={{marginTop:"2vw",width:"90%",alignItems:"center",justifyContent:"space-evenly"}}>
+ <Newcard>
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="600px" height="250px"alt="" />
+  <Cardcontent>
+  <Text style={{lineHeight:"2rem"}}>Sports</Text>
+  <Text style={{fontSize:"1.1rem"}}>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
+  <Hr style={{marginTop:"1%"}}/>
+  <Tag style={{marginTop:"0",width:"90%",alignItems:"center",justifyContent:"space-evenly"}}>
   <FontAwesomeIcon icon={faCircleUser} style={{color: "#787878",marginLeft:"3%"}} />
-    <Span style={{margin:"0",marginLeft:"3%"}}>AKSHAT</Span>
+<Text>Akshat</Text>
     <FontAwesomeIcon icon={faHeart} style={{color: "#696969",marginLeft:"auto"}} />
   </Tag>
+  </Cardcontent>
  </Newcard>
-<Newcard>
-  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="500px" height="200px"alt="" />
-  <Text>sports</Text>
-  <Text>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
-  <Hr style={{marginTop:"2%"}}/>
-  <Tag style={{marginTop:"2vw",width:"90%",alignItems:"center",justifyContent:"space-evenly"}}>
+ <Newcard>
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="600px" height="250px"alt="" />
+  <Cardcontent>
+  <Text style={{lineHeight:"2rem"}}>Sports</Text>
+  <Text style={{fontSize:"1.1rem"}}>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
+  <Hr style={{marginTop:"1%"}}/>
+  <Tag style={{marginTop:"0",width:"90%",alignItems:"center",justifyContent:"space-evenly"}}>
   <FontAwesomeIcon icon={faCircleUser} style={{color: "#787878",marginLeft:"3%"}} />
-    <Span style={{margin:"0",marginLeft:"3%"}}>AKSHAT</Span>
+<Text>Akshat</Text>
     <FontAwesomeIcon icon={faHeart} style={{color: "#696969",marginLeft:"auto"}} />
   </Tag>
+  </Cardcontent>
+ </Newcard>
+ <Newcard>
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="600px" height="250px"alt="" />
+  <Cardcontent>
+  <Text style={{lineHeight:"2rem"}}>Sports</Text>
+  <Text style={{fontSize:"1.1rem"}}>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
+  <Hr style={{marginTop:"1%"}}/>
+  <Tag style={{marginTop:"0",width:"90%",alignItems:"center",justifyContent:"space-evenly"}}>
+  <FontAwesomeIcon icon={faCircleUser} style={{color: "#787878",marginLeft:"3%"}} />
+<Text>Akshat</Text>
+    <FontAwesomeIcon icon={faHeart} style={{color: "#696969",marginLeft:"auto"}} />
+  </Tag>
+  </Cardcontent>
  </Newcard>
  
 </News>
@@ -202,7 +218,7 @@ const Sidnav=()=>{
 </Newslatest>
 
 </Ul2>
-<Ul2 style={{marginTop:"6%",height:"20vh"}}>
+<Ul2 style={{marginTop:"6%",height:"25vh"}}>
 <Head>
 <Text>Popular Tags</Text>
 <FontAwesomeIcon icon={faPlus} style={{color: "#575757",}} />

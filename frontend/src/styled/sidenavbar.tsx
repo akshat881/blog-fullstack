@@ -96,12 +96,14 @@ border-radius: 5px;
  padding:2%;
  `
 export const Cardsinner=styled.div` 
+
 display:flex;
 
 `
 export const News=styled.div` 
+/* border:2px solid red; */
 display:flex;
-
+gap:2%;
 flex-direction:row;
 flex-wrap:wrap;
 width:100%;
@@ -125,12 +127,10 @@ border-radius:10px;
 background:#ffffff;
  `
 export const Newcard=styled.div`
+overflow:hidden;
 position:relative;
-margin-left:2%;
-background:#fff;
 width:27vw;
 height:20vw;
-overflow:hidden;
 border-radius:5px;
 `
 export const Tag=styled.div`
@@ -147,4 +147,22 @@ color:#727C89;
 background:#E2E7ED;
 border-radius:10px;
 cursor:pointer;
+`
+export const Cardcontent=styled.div`
+position:absolute;
+bottom:0;
+height:8vw;
+width:100%;
+background:#ffffff;
+padding:3%;
+cursor:pointer;
+`
+export const Cardimg=styled.div`
+position:relative;
+overflow:hidden;
+width:100%;
+background:#ffffff;
+height:auto;
+cursor:pointer;
+border-radius:10px;
 `
