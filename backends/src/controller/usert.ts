@@ -150,4 +150,7 @@ export const forgot = async (req: Request, res: Response) => {
       res.send("error in reset");
     }
   };
-  
+  export const logout=(req: Request, res: Response)=>{
+res.clearCookie
+res.status(200).send("clear")
+  }

@@ -2,10 +2,19 @@ import Bg from 'Assets/Logo/WITS@4x.svg'
 import {Cardcontent,Span,Tag,Ul2,Newslatest,Newcard,Newsupdate,News,Cardsinner,Container,Link,Ul,List,Hr,Text,Head,Upernav,Navitem,Navtext,Sideitem,Input,Mainsection,Cards, Cardimg} from 'styled/sidenavbar';
 import { faNewspaper,faBars,faFilm,faMusic,faPlane,faUser, faCircleUser, faGear, faLifeRing, faArrowRightFromBracket, faComments, faBell, faMagnifyingGlass, faArrowRight, faPlus, faHeart} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useGet} from 'hooks';
+import {useNavigate} from "react-router-dom";
 
 
 const Sidnav=()=>{
-  
+  const navigate = useNavigate();
+
+    useGet("/logout")
+ 
+  function clearCookies() {
+    
+navigate("/")
+  }
     return( 
       <>
       <Container>
@@ -68,7 +77,7 @@ const Sidnav=()=>{
   <Text>Help & Support</Text>
 </Link>
 </List>
-<List>
+<List onClick={clearCookies}>
   <Link>
   <FontAwesomeIcon icon={faArrowRightFromBracket} style={{color: "#707070",}} />
   <Text>Log Out</Text>
@@ -169,7 +178,7 @@ const Sidnav=()=>{
 <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="600px" height="250px"alt="" />
   <Cardcontent>
   <Text style={{lineHeight:"2rem"}}>Sports</Text>
-  <Text style={{fontSize:"1.1rem"}}>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
+  <Text style={{fontSize:"1.1rem",overflow:"hidden",textOverflow:"ellipsis"}}>Before new  York Auto Show,Car Take Their Own Star</Text>
   <Hr style={{marginTop:"1%"}}/>
   <Tag style={{marginTop:"0",width:"90%",alignItems:"center",justifyContent:"space-evenly"}}>
   <FontAwesomeIcon icon={faCircleUser} style={{color: "#787878",marginLeft:"3%"}} />
@@ -192,7 +201,7 @@ const Sidnav=()=>{
 <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" style={{borderRadius:"5px"}}width="100px" height="100px"alt="" />
 <Text>
 <Text>Sport</Text>
-<Text>Tiger Woods in a Stirring Return to the Top,Capture the Master at 43</Text>
+<Text style={{overflow:"hidden",textOverflow:"ellipsis"}}>Tiger Woods in a Stirring Return to the Top,Capture the Master at 43</Text>
 </Text>
 </Newslatest>
 <Newslatest>

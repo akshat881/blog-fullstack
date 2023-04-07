@@ -109,7 +109,7 @@ border-radius: 50vw;
    }
 `
 export const Input = styled.input`
-    width: 89.5%;
+    width: 100%;
 
     border: 1px solid #f0d806ef;
     padding: 5%;

@@ -17,57 +17,26 @@ const Login=()=>{
   // })
     
   const onSubmit: SubmitHandler<Formuser> =async(userdata)=>{
-    // const data=Postdata("/",userdata)
-    // Post("/",data)
+ 
 
 
 
     axios.defaults.withCredentials = true;
-    const data = await axios.post('http://localhost:4000/login', userdata,{withCredentials:true});
-    
+    const data=await myData("/login",userdata);
+
+    Swal.fire({
+      position: 'top-end',
+      icon: data.data.icon,
+      title: `${data.data.message}`,
+      showConfirmButton: false,
+      timer: 1500
+    })
     if(data.status===200){
       navigate("/dash")
 
-    }
-
-    
-
-
-
-
-
-  //  await fetch("http://127.0.0.1:4000/login", {
-  //   method: 'POST',
-  //   body: JSON.stringify(userdata),
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   } 
-  //   }).then(response => {
-  //     console.log(response);
-      
-  //     // Assuming the API returns a cookie named 'token'
-  //     document.cookie = `token=${response.headers.get('Set-Cookie')}`;
-  //   })
-  //   .catch(error => {
-  //     console.error('Error:', error);
-  //   });
-  //   .then(function (data) {
-  //   console.log(data)
-  //  console.log("checking", data.headers.get('Set-Cookie'));
-   
-  //   });
-  //     //  const data=await myData("/login",userdata);
-  //     //  console.log(data);
-     
-    
+    } 
   }
-  //     // Swal.fire({
-  //     //   position: 'top-end',
-  //     //   icon: data.data.icon,
-  //     //   title: `${data.data.message}`,
-  //     //   showConfirmButton: false,
-  //     //   timer: 1500
-  //     // })
+   
    
 
   // };

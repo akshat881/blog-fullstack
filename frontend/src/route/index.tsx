@@ -27,7 +27,7 @@ const routespath=[
     {
         path:"/dash",
         component:<Sidnav/>,
-        restricted:false
+        restricted:true
 
     },
     {

@@ -12,8 +12,8 @@ return useQuery(url,data)
         content, {
             headers: {
               'Content-Type': 'application/json'
-            }
-        }, 
+            },withCredentials:true
+        }
     )
     }
  
