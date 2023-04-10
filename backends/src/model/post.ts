@@ -8,6 +8,9 @@ const imageSchema:Schema<Post> = new Schema({
     title: {
         type:String
     },
+    discription: {
+        type:String
+    },
     comment: [{
         author:String,
         content:String

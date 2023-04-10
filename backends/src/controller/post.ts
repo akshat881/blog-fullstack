@@ -7,7 +7,7 @@ dotenv.config();
 
 export const posts=async(req: Request, res: Response)=>{
 
-    const { title } = req.body;
+    const { title,discription } = req.body;
     const imageData = req.file.path;
     const token = req.cookies.usersesion;
     const id=jwt.verify(token, process.env.PRIVATE_KEY,(err,data)=>{
@@ -17,6 +17,7 @@ export const posts=async(req: Request, res: Response)=>{
     const mypost = new postdata({
         useid:id.email,
       title:title,
+      discription:discription,
       comment:[],
       likes: [],
       dislikes: 0,
