@@ -2,7 +2,8 @@ import mongoose,{Document} from "mongoose"
 export interface Register extends Document{
     name:String,
     email:String,
-    password:String
+    password:String,
+    profile:String
 }
 export interface Otp extends Document{
     email: string;

@@ -2,11 +2,14 @@ import { Request, Response } from 'express'
 import bcrypt from 'bcrypt'
 import dotenv from "dotenv"
 
+import { v2 as cloudinary } from 'cloudinary'
+
+import fs from 'fs'
 import * as jwt from 'jsonwebtoken'
 import { mail } from "../helper/index";
 import user_model from '../model/user'
 import otpmodals from "../model/otp";
-
+// import {icon} from '../meddelware/index'
 dotenv.config();
 
 export const signup = async (req: Request, res: Response) => {
@@ -16,7 +19,8 @@ export const signup = async (req: Request, res: Response) => {
         const users = new user_model({
             name: name,
             email: email,
-            password: await bcrypt.hash(password, 10)
+            password: await bcrypt.hash(password, 10),
+            profile:`https://api.dicebear.com/6.x/bottts/png?seed=${name}`
         });
         const find = await user_model.findOne({ email: email });
         if (!find) {
@@ -48,7 +52,7 @@ export const login = async (req: Request, res: Response) => {
 
                 jwt.sign(req.body, process.env.PRIVATE_KEY, function (err, token) {
                     console.log(token);
-                    res.cookie('usersesion', token, { maxAge: 900000, httpOnly: true });
+                    res.cookie('usersesion', token, { httpOnly: true });
                     // res.send('Cookie has been set!');
                     res.status(200).json({message: `login succesfull with tokken`,icon:"success"})
                 });
@@ -151,6 +155,6 @@ export const forgot = async (req: Request, res: Response) => {
     }
   };
   export const logout=(req: Request, res: Response)=>{
-res.clearCookie
+res.clearCookie('usersesion	',{path:"/"})
 res.status(200).send("clear")
   }

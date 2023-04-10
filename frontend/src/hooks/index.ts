@@ -7,7 +7,7 @@ import instance from "api";
 return useQuery(url,data)
  }
  export const usePostdata=()=>{
-    const post_data=async(url:any,content:any)=>{
+    const post_data=async(url:string,content:any)=>{
         return await instance.post(url,
         content, {
             headers: {

@@ -13,6 +13,10 @@ const user:Schema<Register>=new Schema({
     password:{
         type:String,
         require:true
+    },
+    profile:{
+        type:String,
+        require:true
     }
 })
 const user_model:Model<Register>=mongoose.model("user_data",user)

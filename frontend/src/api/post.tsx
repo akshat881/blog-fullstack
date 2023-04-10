@@ -6,8 +6,6 @@ const Post=async(url:string,content:any)=>{
           'Content-Type': 'application/json'
         }
     }
-).then((data)=>{
-  console.log(data)
-})
+)
 }
 export default Post

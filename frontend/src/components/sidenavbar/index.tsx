@@ -4,16 +4,19 @@ import { faNewspaper,faBars,faFilm,faMusic,faPlane,faUser, faCircleUser, faGear,
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useGet} from 'hooks';
 import {useNavigate} from "react-router-dom";
-
+import axios from 'axios';
 
 const Sidnav=()=>{
   const navigate = useNavigate();
 
-    useGet("/logout")
+    // useGet("/logout")
  
-  function clearCookies() {
-    
-navigate("/")
+  const clearCookies =async()=>{
+
+    await axios.get('http://localhost:4000/logout',{withCredentials:true}).then(()=>{
+      window.location.href = "/";
+    })
+     
   }
     return( 
       <>
@@ -29,7 +32,8 @@ navigate("/")
 <Hr/>
 <List>
 <Head>
-<FontAwesomeIcon icon={faUser} size="2xl" style={{color: "#787878",}} />
+{/* <FontAwesomeIcon icon={faUser} size="2xl" style={{color: "#787878",}} /> */}
+<img src="https://api.dicebear.com/6.x/bottts/png?seed=abhishake" width="50px" height="50px" alt="" />
 <Text>AKSHAT</Text>
 </Head>
 </List>
