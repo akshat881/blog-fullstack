@@ -1,9 +1,7 @@
-import axios from "axios";
 import {useGet} from '../hooks'
-import { useEffect, useState } from "react";
 export const Check=()=>{
-    const {data}:any=useGet("/auth")
-
+    const {data,isLoading}:any=useGet("/auth")
+console.log(isLoading)
 
     if(data?.data.message===true){
      return true

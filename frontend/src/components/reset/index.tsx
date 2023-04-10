@@ -9,21 +9,24 @@ import Error from 'components/error';
 const Reset=()=>{
   const { register, handleSubmit} = useForm<Resetuser>();
   const queryString = new URLSearchParams(window.location.search);
-  const paramsdat =queryString.get('email')
+  const paramsdat =queryString.get('t')
   const paramdate=Number(paramsdat?.split("/")[1])
-   const email=queryString.get('email');
+   const email=queryString.get('t');
    const mail=email?.split('/')[0]
+
   const onSubmit: SubmitHandler<Resetuser> =async(userdata)=>{
+    console.log(mail)
       axios.defaults.withCredentials = true;
-      const { data } = await axios.post('http://127.0.0.1:4000/reset', userdata,{params:{email:mail}});
+      const { data } = await axios.post('http://localhost:4000/reset', userdata,{params:{email:mail}});
+      console.log(data)
          Swal.fire({
         position: 'top-end',
-        icon: data.data.icon,
-        title: `${data.data.message}`,
+        icon: data.icon,
+        title: `${data.message}`,
         showConfirmButton: false,
         timer: 1500
       })
-  console.log(data)
+
   };
 
     return( 

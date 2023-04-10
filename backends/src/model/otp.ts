@@ -2,10 +2,14 @@ import mongoose,{Schema,Model} from "mongoose";
 
 import {Otp} from '../interface/type'
 const otpmodal:Schema<Otp>=new Schema({
+    
+    id:{
+         type: mongoose.Schema.Types.ObjectId, ref: 'user_data' 
+      
+    },
     email:{
         type:String,
         require:true
-      
     },
     otp:{
         type:String,

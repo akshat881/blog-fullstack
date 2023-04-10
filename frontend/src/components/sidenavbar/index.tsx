@@ -1,14 +1,15 @@
 import Bg from 'Assets/Logo/WITS@4x.svg'
-import {Cardcontent,Span,Tag,Ul2,Newslatest,Newcard,Newsupdate,News,Cardsinner,Container,Link,Ul,List,Hr,Text,Head,Upernav,Navitem,Navtext,Sideitem,Input,Mainsection,Cards, Cardimg} from 'styled/sidenavbar';
-import { faNewspaper,faBars,faFilm,faMusic,faPlane,faUser, faCircleUser, faGear, faLifeRing, faArrowRightFromBracket, faComments, faBell, faMagnifyingGlass, faArrowRight, faPlus, faHeart} from '@fortawesome/free-solid-svg-icons';
+import {Form,Button,Cardcontent,Span,Tag,Ul2,Newslatest,Newcard,Newsupdate,News,Cardsinner,Container,Link,Ul,List,Hr,Text,Head,Upernav,Navitem,Navtext,Sideitem,Input,Mainsection,Cards, Cardimg} from 'styled/sidenavbar';
+import { faNewspaper,faBars,faFilm,faMusic,faPlane,faUser, faCircleUser, faGear, faLifeRing, faArrowRightFromBracket, faComments, faBell, faMagnifyingGlass, faArrowRight, faPlus, faHeart, faImage} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useGet} from 'hooks';
+import { useGet,usePostdata} from 'hooks';
+import {useForm,SubmitHandler} from 'react-hook-form'
 import {useNavigate} from "react-router-dom";
 import axios from 'axios';
 
 const Sidnav=()=>{
   const navigate = useNavigate();
-
+const myData=usePostdata();
     // useGet("/logout")
  
   const clearCookies =async()=>{
@@ -17,6 +18,11 @@ const Sidnav=()=>{
       window.location.href = "/";
     })
      
+  }
+  const { register, handleSubmit} = useForm();
+  const onSubmit=async(userpost:any)=>{
+    const data=myData("/dash",userpost)
+console.log(data)
   }
     return( 
       <>
@@ -138,7 +144,41 @@ const Sidnav=()=>{
        <Cards>
 <Cardsinner>
 <News>
+  <Form onSubmit={handleSubmit(onSubmit)}>
+
+  <div style={{display:"flex",justifyContent:"space-between"}}>
+<img src="https://api.dicebear.com/6.x/bottts/png?seed=abhishake" width="50px" height="50px" alt="" />
+<Input {...register("title")}style={{borderRadius:"50px",width:"90%",background:"#EEF1F2"}}/>
+</div>
+<textarea {...register("discription")}style={{borderRadius:"30px",marginTop:"2%",height:"20vw",border:"2px solid #EEF1F2"}}></textarea>
+<Hr style={{margin:"4%"}}/>
+
+  <Tag style={{padding:"0",alignItems:"center",justifyContent:"space-around"}}>
+    <div style={{display:"flex",alignItems:"center",position:"relative"}}>
+  <FontAwesomeIcon icon={faImage} style={{color: "#787878",zIndex:"1",cursor:"pointer"}} />
+  <Text style={{cursor:"pointer"}}>Image</Text>
+  <input style={{opacity:"0",position:"absolute",cursor:"pointer"}} {...register("imageData")}type="file"/>
  
+  </div>
+    <div style={{display:"flex",alignItems:"center"}}>
+  <FontAwesomeIcon icon={faImage} style={{color: "#787878",}} />
+  <Text style={{}}>Clip</Text>
+  </div>
+    <div style={{display:"flex",alignItems:"center"}}>
+  <FontAwesomeIcon icon={faImage} style={{color: "#787878",}} />
+  <Text style={{}}>Attachments</Text>
+  </div>
+    <div style={{display:"flex",alignItems:"center"}}>
+  <FontAwesomeIcon icon={faImage} style={{color: "#787878",}} />
+  <Text style={{}}>Audio</Text>
+  </div>
+    <div style={{display:"flex",alignItems:"center"}}>
+<Button>Post</Button>
+  </div>
+  </Tag>
+
+
+</Form>
 <Newcard>
 <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="600px" height="250px"alt="" />
   <Cardcontent>

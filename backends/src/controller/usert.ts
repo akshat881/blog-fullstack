@@ -1,15 +1,10 @@
 import { Request, Response } from 'express'
 import bcrypt from 'bcrypt'
 import dotenv from "dotenv"
-
-import { v2 as cloudinary } from 'cloudinary'
-
-import fs from 'fs'
 import * as jwt from 'jsonwebtoken'
 import { mail } from "../helper/index";
 import user_model from '../model/user'
 import otpmodals from "../model/otp";
-// import {icon} from '../meddelware/index'
 dotenv.config();
 
 export const signup = async (req: Request, res: Response) => {
@@ -53,7 +48,7 @@ export const login = async (req: Request, res: Response) => {
                 jwt.sign(req.body, process.env.PRIVATE_KEY, function (err, token) {
                     console.log(token);
                     res.cookie('usersesion', token, { httpOnly: true });
-                    // res.send('Cookie has been set!');
+           
                     res.status(200).json({message: `login succesfull with tokken`,icon:"success"})
                 });
 
@@ -81,9 +76,10 @@ export const forgot = async (req: Request, res: Response) => {
         res.status(201).json({message:"user dosent exist please check your mail",icon:"warning"});
       } else {
   const expiretime=new Date().getTime() + 1000000
-        const url = `http://127.0.0.1:3000/reset?email=${req.body.email}/${expiretime}`;
+        const url = `http://localhost:3000/reset?t=${find._id}/${expiretime}`;
         const otp = Math.floor(100000 + Math.random() * 900000);
         const otpsave = new otpmodals({
+          id:find._id,
           email: find.email,
           otp: otp,
           expaire: expiretime,
@@ -117,14 +113,15 @@ export const forgot = async (req: Request, res: Response) => {
   };
   export const reset = async (req: Request, res: Response) => {
     try {
-      const mail=req.query.email;
-       console.log(mail)
+      const mail=Number(req.query.email);
+       console.log(req.query.email)
       // const final=mail.split("/")
 
-      const find = await otpmodals.findOne({ email: req.query.email });
+      const find = await otpmodals.findOne({ id:req.query.email});
+      // console.log(find)
       const { otp, password } = req.body;
       if(find===null){
-        res.status(500).json({message:"sesion expired"})
+        res.status(206).json({message:"sesion expired"})
       }else{
     
         const expiresAt = new Date().getTime();
@@ -137,15 +134,17 @@ export const forgot = async (req: Request, res: Response) => {
                 { $set: { password: await bcrypt.hash(password, 10)} }
               )
               .then(async(data) => {
-                res.send("Password Succesfully Updated");
+                res.status(200).json({message:"Password Succesfully Updated"})
+             
                 await find.deleteOne({mail})
               });
           } else {
-            res.send("incorrect otp");
+            res.status(201).json({message:"incorrect otp"})
+        
           }
         } else {
-          
-          res.send("sesion expired");
+          res.status(201).json({message:"sesion expired"})
+   
         }
       }
 

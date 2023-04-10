@@ -82,6 +82,9 @@ padding:0.8rem;
 width: 100%;
 border: 2px solid #EEF1F2;
 border-radius: 5px;
+&:focus {
+        outline: none;
+    }
 `
   export const Mainsection=styled.div`
   margin-top:4.85vw;
@@ -107,6 +110,7 @@ gap:2%;
 flex-direction:row;
 flex-wrap:wrap;
 width:100%;
+margin-right:1%;
 `
 export const Newsupdate=styled.div` 
 
@@ -127,6 +131,7 @@ border-radius:10px;
 background:#ffffff;
  `
 export const Newcard=styled.div`
+margin-top:3%;
 overflow:hidden;
 position:relative;
 width:27vw;
@@ -165,4 +170,24 @@ background:#ffffff;
 height:auto;
 cursor:pointer;
 border-radius:10px;
+`
+export const Form=styled.form`
+position:relative;
+border-radius:1%;
+padding:4%;
+display:flex;
+flex-direction:column;
+width:100%;
+background:#ffffff;
+height:auto;
+
+`
+export const Button=styled.button`
+padding:10% 200% 10% 100%;
+border:none;
+background:#6d97df;
+color:#fff;
+border-radius:50px;
+width:100%;
+cursor:pointer;
 `

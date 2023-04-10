@@ -17,7 +17,14 @@ const user:Schema<Register>=new Schema({
     profile:{
         type:String,
         require:true
-    }
+    },
+    frinds:
+        [{
+            author:String,
+            id:String
+        }
+        ]
+    
 })
 const user_model:Model<Register>=mongoose.model("user_data",user)
 export default user_model;
