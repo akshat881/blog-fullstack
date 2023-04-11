@@ -20,9 +20,21 @@ const myData=usePostdata();
      
   }
   const { register, handleSubmit} = useForm();
-  const onSubmit=async(userpost:any)=>{
-    const data=myData("/dash",userpost)
-console.log(data)
+  const onSubmit=async(userpost:any)=>{ 
+    // console.log(userpost.imageData[0])
+    // const formData = {
+    //   title: userpost.name,
+    //   discription: userpost.discription,
+    //   imageData: userpost.imageData.file
+    // };
+    const formData = new FormData();
+    formData.append('title', userpost.title);
+    formData.append('discription', userpost.discription);
+    formData.append('imageData', userpost.imageData[0]);
+    const response = await axios.post('http://localhost:4000/dash', formData);
+    console.log(response);
+//     const data=await myData("/dash",formData)
+// console.log(formData)
   }
     return( 
       <>
