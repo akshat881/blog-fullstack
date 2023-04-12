@@ -8,7 +8,7 @@ import * as jwt from 'jsonwebtoken'
 dotenv.config();
     export const validate=(req:Request,res:Response,next:NextFunction)=>{
         const token = req.cookies.usersesion;
-        jwt.verify(token,process.env.PRIVATE_KEY,(err, decoded) => {
+        jwt.verify(token,process.env.PRIVATE_KEY,(err:any) => {
             if (err) {
               return res.status(401).json({ message:false });
             }

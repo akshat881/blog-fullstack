@@ -3,6 +3,7 @@ import * as jwt from "jsonwebtoken";
 import dotenv from "dotenv"
 
 import postdata from '../model/post'
+import { log } from "console";
 dotenv.config();
 
 export const posts=async(req: Request, res: Response)=>{
@@ -14,7 +15,7 @@ export const posts=async(req: Request, res: Response)=>{
     const id=jwt.verify(token, process.env.PRIVATE_KEY,(err,data)=>{
         return data;
     })
-    console.log(id?.email)
+
     const mypost = new postdata({
         useid:id?.email,
       title:title,
@@ -25,13 +26,19 @@ export const posts=async(req: Request, res: Response)=>{
       imageData:imageData
     });
 
-    await mypost.save().then((data)=>{
-        if(data){
-            res.send("uploded succes")
+     await mypost.save()
+    .then((data)=>{
+        console.log(data)
+        if(!data){
+         res.status(204).json({message:"some error"})
+       
         }
     }).catch((e)=>{
-        res.send(e)
+        // res.status(500).json({message:"server error"})
+        console.log(e);
+        
     })
+    return res.status(200).json({message:"succes"})
 }
 export const comment=(req: Request, res: Response)=>{
     if(req.body.like=='1'){
@@ -52,4 +59,8 @@ export const comment=(req: Request, res: Response)=>{
     }).catch((e)=>{
         res.send(e);
     })
+}
+export const postmydata=async(req: Request, res: Response)=>{
+    res.json(await postdata.find())
+
 }

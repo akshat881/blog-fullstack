@@ -6,7 +6,7 @@ import { useGet,usePostdata} from 'hooks';
 import {useForm,SubmitHandler} from 'react-hook-form'
 import {useNavigate} from "react-router-dom";
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Sidnav=()=>{
   
@@ -24,6 +24,10 @@ const imgtext=(e:any)=>{
       window.location.href = "/";
     })
   }
+  const {data}=useGet("/postdata")
+  // console.log(data?.data)
+const mypostdata=data?.data;
+console.log(mypostdata)
   const { register, handleSubmit} = useForm();
   const onSubmit=async(userpost:any)=>{ 
 
@@ -193,24 +197,15 @@ const imgtext=(e:any)=>{
 
 
 </Form>
-<Newcard>
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="600px" height="250px"alt="" />
-  <Cardcontent>
-  <Text style={{lineHeight:"2rem"}}>Sports</Text>
-  <Text style={{fontSize:"1.1rem"}}>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
-  <Hr style={{marginTop:"1%"}}/>
-  <Tag style={{marginTop:"0",width:"90%",alignItems:"center",justifyContent:"space-evenly"}}>
-  <FontAwesomeIcon icon={faCircleUser} style={{color: "#787878",marginLeft:"3%"}} />
-<Text>Akshat</Text>
-    <FontAwesomeIcon icon={faHeart} style={{color: "#696969",marginLeft:"auto"}} />
-  </Tag>
-  </Cardcontent>
- </Newcard>
+{
+  
+  mypostdata?.map((item:any)=>{
+
  <Newcard>
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="600px" height="250px"alt="" />
+<img src={item.imageData} width="600px" height="250px"alt="" />
   <Cardcontent>
   <Text style={{lineHeight:"2rem"}}>Sports</Text>
-  <Text style={{fontSize:"1.1rem"}}>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
+  <Text style={{fontSize:"1.1rem"}}>{item.title}</Text>
   <Hr style={{marginTop:"1%"}}/>
   <Tag style={{marginTop:"0",width:"90%",alignItems:"center",justifyContent:"space-evenly"}}>
   <FontAwesomeIcon icon={faCircleUser} style={{color: "#787878",marginLeft:"3%"}} />
@@ -218,33 +213,11 @@ const imgtext=(e:any)=>{
     <FontAwesomeIcon icon={faHeart} style={{color: "#696969",marginLeft:"auto"}} />
   </Tag>
   </Cardcontent>
- </Newcard>
- <Newcard>
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="600px" height="250px"alt="" />
-  <Cardcontent>
-  <Text style={{lineHeight:"2rem"}}>Sports</Text>
-  <Text style={{fontSize:"1.1rem"}}>Before new  York Auto Show,Car Take Their Own Star Turn</Text>
-  <Hr style={{marginTop:"1%"}}/>
-  <Tag style={{marginTop:"0",width:"90%",alignItems:"center",justifyContent:"space-evenly"}}>
-  <FontAwesomeIcon icon={faCircleUser} style={{color: "#787878",marginLeft:"3%"}} />
-<Text>Akshat</Text>
-    <FontAwesomeIcon icon={faHeart} style={{color: "#696969",marginLeft:"auto"}} />
-  </Tag>
-  </Cardcontent>
- </Newcard>
- <Newcard>
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="600px" height="250px"alt="" />
-  <Cardcontent>
-  <Text style={{lineHeight:"2rem"}}>Sports</Text>
-  <Text style={{fontSize:"1.1rem",overflow:"hidden",textOverflow:"ellipsis"}}>Before new  York Auto Show,Car Take Their Own Star</Text>
-  <Hr style={{marginTop:"1%"}}/>
-  <Tag style={{marginTop:"0",width:"90%",alignItems:"center",justifyContent:"space-evenly"}}>
-  <FontAwesomeIcon icon={faCircleUser} style={{color: "#787878",marginLeft:"3%"}} />
-<Text>Akshat</Text>
-    <FontAwesomeIcon icon={faHeart} style={{color: "#696969",marginLeft:"auto"}} />
-  </Tag>
-  </Cardcontent>
- </Newcard>
+ </Newcard> 
+  })
+}
+
+
  
 </News>
 <Newsupdate>
