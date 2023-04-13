@@ -25,6 +25,7 @@ function App() {
 <Router>
 <QueryClientProvider client={queryClient}>
   <Routes>
+    
     {
       routespath.map((data,index)=>{
         const {path,component,restricted}=data;

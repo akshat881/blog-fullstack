@@ -9,7 +9,10 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 const Sidnav=()=>{
-  
+  const {data}=useGet("/postdata")
+  // console.log(data?.data)
+const mypostdata=data?.data;
+console.log(mypostdata)
   const [sowimg,setimg]=useState()
   const [sow,set]=useState(false)
   const navigate = useNavigate();
@@ -24,10 +27,7 @@ const imgtext=(e:any)=>{
       window.location.href = "/";
     })
   }
-  const {data}=useGet("/postdata")
-  // console.log(data?.data)
-const mypostdata=data?.data;
-console.log(mypostdata)
+
   const { register, handleSubmit} = useForm();
   const onSubmit=async(userpost:any)=>{ 
 
@@ -200,7 +200,7 @@ console.log(mypostdata)
 {
   
   mypostdata?.map((item:any)=>{
-
+return(
  <Newcard>
 <img src={item.imageData} width="600px" height="250px"alt="" />
   <Cardcontent>
@@ -213,7 +213,7 @@ console.log(mypostdata)
     <FontAwesomeIcon icon={faHeart} style={{color: "#696969",marginLeft:"auto"}} />
   </Tag>
   </Cardcontent>
- </Newcard> 
+ </Newcard> )
   })
 }
 

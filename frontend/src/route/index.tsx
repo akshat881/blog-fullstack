@@ -5,6 +5,7 @@ import Dash from 'components/dashboard'
 import Error from 'components/error'
 import Reset from 'components/reset'
 import Sidnav from 'components/sidenavbar'
+import Blogs from 'components/post'
 const routespath=[
     {
         path:"/",
@@ -41,6 +42,13 @@ const routespath=[
         component:<Reset/>,
         restricted:false
 
-    }
+    },
+    {
+        path:"/dash/blog/:id",
+        component:<Blogs/>,
+        restricted:false
+
+    },
+
 ]
 export default routespath;
