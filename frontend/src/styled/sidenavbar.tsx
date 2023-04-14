@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import {Link} from "react-router-dom";
  export const Container=styled.div`
  position :fixed;
  left:0;
@@ -34,11 +34,12 @@ left:0;
    border:1px solid #EEF1F2;
    margin-top: 10%;
  `
- export const Link=styled.a`
+ export const Linkbar=styled(Link)`
+ text-decoration:none;
 display: flex;
 align-items: center;
    width: 100%;
-   cursor: pointer;
+   color:black;
  `
  export const Text=styled.p`
 

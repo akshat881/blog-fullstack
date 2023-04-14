@@ -1,5 +1,5 @@
 import Bg from 'Assets/Logo/WITS@4x.svg'
-import {Form,Button,Cardcontent,Span,Tag,Ul2,Newslatest,Newcard,Newsupdate,News,Cardsinner,Container,Link,Ul,List,Hr,Text,Head,Upernav,Navitem,Navtext,Sideitem,Input,Mainsection,Cards, Cardimg} from 'styled/sidenavbar';
+import {Linkbar,Form,Button,Cardcontent,Span,Tag,Ul2,Newslatest,Newcard,Newsupdate,News,Cardsinner,Container,Ul,List,Hr,Text,Head,Upernav,Navitem,Navtext,Sideitem,Input,Mainsection,Cards, Cardimg} from 'styled/sidenavbar';
 import { faNewspaper,faBars,faFilm,faMusic,faPlane,faUser, faCircleUser, faGear, faLifeRing, faArrowRightFromBracket, faComments, faBell, faMagnifyingGlass, faArrowRight, faPlus, faHeart, faImage, faCircleXmark} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useGet,usePostdata} from 'hooks';
@@ -7,7 +7,7 @@ import {useForm,SubmitHandler} from 'react-hook-form'
 import {useNavigate} from "react-router-dom";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-
+import Blogs from 'components/post';
 const Sidnav=()=>{
   const {data}=useGet("/postdata")
   // console.log(data?.data)
@@ -60,89 +60,89 @@ const imgtext=(e:any)=>{
 </List>
 <Hr left="7%" width="80%"/>
 <List>
-  <Link>
+  <Linkbar to='/blog/djfndjfndj'>
   <FontAwesomeIcon icon={faNewspaper} style={{color: "#9c9c9c",}} />
   <Text>News</Text>
-</Link>
+</Linkbar>
 </List>
 <List>
-  <Link>
+  <Linkbar to='/blog/djfndjfndj'>
   <FontAwesomeIcon icon={faFilm} style={{color: "#9c9c9c",}} />
   <Text>Movie</Text>
-</Link>
+</Linkbar>
 </List>
 <List>
-  <Link>
+  <Linkbar to='/blog/djfndjfndj'>
   <FontAwesomeIcon icon={faMusic} style={{color: "#949494",}} />
   <Text>Music</Text>
-</Link>
+</Linkbar>
 </List>
 <List>
-  <Link>
+  <Linkbar to='/blog/djfndjfndj'>
   <FontAwesomeIcon icon={faPlane} style={{color: "#545454",}} />
   <Text>Travel</Text>
-</Link>
+</Linkbar>
 </List>
 <Hr left="7%" width="80%"/>
 <List>
-  <Link>
+  <Linkbar to='/blog/djfndjfndj'>
   <FontAwesomeIcon icon={faCircleUser} style={{color: "#787878",}} />
   <Text>Account</Text>
-</Link>
+</Linkbar>
 </List>
 <List>
-  <Link>
+  <Linkbar to='/blog/djfndjfndj'>
   <FontAwesomeIcon icon={faGear} style={{color: "#8a8a8a",}} />
   <Text>Setting</Text>
-</Link>
+</Linkbar>
 </List>
 <List>
-  <Link>
+  <Linkbar to='/blog/djfndjfndj'>
   <FontAwesomeIcon icon={faLifeRing} style={{color: "#999999",}} />
   <Text>Help & Support</Text>
-</Link>
+</Linkbar>
 </List>
 <List onClick={clearCookies}>
-  <Link>
+  <Linkbar to='/blog/djfndjfndj'>
   <FontAwesomeIcon icon={faArrowRightFromBracket} style={{color: "#707070",}} />
   <Text>Log Out</Text>
-</Link>
+</Linkbar>
 </List>
         </Ul>
       </Container>
       <Upernav>
         <Navitem>
         <Navtext>
-          <Link>
+          <Linkbar to='/blog/djfndjfndj'>
           <Text>
             Latest News
           </Text>
-          </Link>
+          </Linkbar>
          
          
-          <Link>
+          <Linkbar to='/blog/djfndjfndj'>
           <Text>
           Political
           </Text>
-          </Link>
+          </Linkbar>
         
         
-          <Link>
+          <Linkbar to='/blog/djfndjfndj'>
           <Text>
             Business
           </Text>
-          </Link>
+          </Linkbar>
         
-          <Link>
+          <Linkbar to='/blog/djfndjfndj'>
           <Text>
           Sports
           </Text>
-          </Link>
-          <Link>
+          </Linkbar>
+          <Linkbar to='/blog/djfndjfndj'>
           <Text>
           Teach
           </Text>
-          </Link>
+          </Linkbar>
           </Navtext>
           
           <Sideitem>

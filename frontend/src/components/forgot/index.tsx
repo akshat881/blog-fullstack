@@ -7,7 +7,7 @@ import withReactContent from 'sweetalert2-react-content'
 import { Container, Card,Input, Form, H3, Text,H2, Button } from 'styled/form'
 import {Formuser} from 'interface'
 // import Post from 'api/post'
-const {id}=useParams();
+// const {id}=useParams();
 import {usePostdata} from 'hooks/index'
 import Bg from 'Assets/Logo/WITS@4x.svg'
 const Forgot=()=>{
