@@ -8,6 +8,8 @@ import {Link} from "react-router-dom";
  height:100vh;
  border:1px solid #EEF1F2;
 overflow: hidden;
+ -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none; 
  `
  export const Head=styled.div`
 display: flex;
@@ -89,29 +91,33 @@ border-radius: 5px;
 `
   export const Mainsection=styled.div`
   margin-top:4.85vw;
-  position:fixed;
+  position:absolute;
   right:0;
+  height:100vh;
   background: #F4F6F8;
- 
- height: 100vh;
+ /* border: 2px solid green; */
   width: calc(100% - 253px);
   transition: all .5s ease-in-out;
+  padding:1%;
  `
  export const Cards=styled.div`
-/* border: 2px solid red; */
- padding:2%;
+border: 2px solid red;
+padding:1%;
  height:100vh;
  width: 100%;
  `
 export const Cardsinner=styled.div` 
- height:100vh;
 
+ height:100vh;
+/* border: 2px solid yellow; */
 display:flex;
 
 `
 export const News=styled.div` 
 /* box-shadow: -5px 2px 29px -9px rgba(0,0,0,0.82); */
 overflow: scroll;
+ -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none; 
 height: 100vh;
 /* border:2px solid green; */
 display:flex;
@@ -119,23 +125,32 @@ flex-wrap:wrap;
 width:100%;
 margin-right:1%;
 border-radius: 2%;
+&::-webkit-scrollbar {
+  display: none;
+}
 `
 export const Newsupdate=styled.div` 
 /* border:2px solid green; */
-
+overflow: scroll;
+-ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none; 
 height:100vh;
 width:100%;
 max-width: 500px;
+&::-webkit-scrollbar {
+  display: none;
+}
 `
 export const Newslatest=styled.div` 
-overflow: scroll;
+
 margin-top:3%;
 display:flex;
 align-items:center;
 width:100%;
 `
 export const Ul2=styled.div`
-box-shadow: -5px 2px 29px -9px rgba(0,0,0,0.82);
+/* border:2px solid green; */
+
 padding:5%;
 border-radius:10px;
 background:#ffffff;
@@ -143,7 +158,7 @@ background:#ffffff;
 export const Newcard=styled.div`
 /* border: 2px solid red; */
 margin-right: auto;
-box-shadow: -5px 2px 29px -9px rgba(0,0,0,0.82);
+
 margin-top:2%;
 overflow:hidden;
 position:relative;

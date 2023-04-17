@@ -5,8 +5,10 @@ export const Main=styled.div`
     display:flex;
     flex-direction:column;
     align-items:center;
-    height:100vh;
+
     width:100%;
+    background:#ffff;
+    padding:3%;
 `
 export const Text=styled.div`
     margin-top:1%;

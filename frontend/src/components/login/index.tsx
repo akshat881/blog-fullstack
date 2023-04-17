@@ -5,17 +5,21 @@ import Swal from 'sweetalert2'
 import { Container, Card,Input, Form, H3, Text,H2, Button } from 'styled/form'
 import {Formuser} from 'interface'
 import axios from 'axios';
+import { useDispatch, useSelector } from "react-redux";
 // import Post from 'api/post'
-import {usePostdata} from 'hooks/index'
+import {useGet, usePostdata} from 'hooks/index'
 import Bg from 'Assets/Logo/WITS@4x.svg'
+import { addpost } from 'store/slice';
+import { useState } from 'react';
 const Login=()=>{
+  const dispatch=useDispatch();
   const navigate = useNavigate();
   const { register, handleSubmit} = useForm<Formuser>();
   const myData=usePostdata()
-  // const {mutate,data:any} = useMutation((userdata)=>{
-  //   usePostdata(userdata)
-  // })
-    
+const [show,set]=useState()
+  // const {data}=useGet("/postdata")
+
+  // const mypostdata=data?.data;
   const onSubmit: SubmitHandler<Formuser> =async(userdata)=>{
  
 
@@ -32,6 +36,10 @@ const Login=()=>{
       timer: 1500
     })
     if(data.status===200){
+     await axios.get('http://localhost:4000/postdata').then((data)=>{
+        dispatch(addpost(data.data))
+      })
+
       window.location.href = "/home";
 
     } 

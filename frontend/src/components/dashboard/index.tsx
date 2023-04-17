@@ -7,11 +7,12 @@ import {useForm,SubmitHandler} from 'react-hook-form'
 import {useNavigate,Link} from "react-router-dom";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useSelector } from "react-redux";
 const Dash=()=>{
-  const {data}=useGet("/postdata")
-
-const mypostdata=data?.data;
-console.log(mypostdata)
+  const mydata=useSelector((state:any)=>{
+    return state.postdata
+  })
+ const mypostdata=mydata[0]
   const [sowimg,setimg]=useState()
   const [sow,set]=useState(false)
 

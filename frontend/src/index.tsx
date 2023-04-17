@@ -1,3 +1,9 @@
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { store } from './store'
+import { Provider } from 'react-redux'
+import persistStore from "redux-persist/es/persistStore";
+import { PersistGate } from 'redux-persist/integration/react';
 import {
   useQuery,
   useMutation,
@@ -5,10 +11,11 @@ import {
   QueryClient,
   QueryClientProvider,
 } from 'react-query'
+
 import ReactDOM from 'react-dom/client';
 import { ReactQueryDevtools } from 'react-query/devtools'
 
-
+const persistor=persistStore(store)
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -18,15 +25,18 @@ const queryClient = new QueryClient({
     },
   },
 })
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <QueryClientProvider client={queryClient}>
+    <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
     <App />
+    </PersistGate>
+    </Provider>
     <ReactQueryDevtools initialIsOpen={false} position='bottom-right'/>
   </QueryClientProvider>
 );

@@ -206,7 +206,7 @@ const Sidnav = () => {
         </Navitem>
       </Upernav>
       <Mainsection>
-        <Cards>
+  
           <Cardsinner>
             <News>
           
@@ -292,83 +292,8 @@ const Sidnav = () => {
                   </Text>
                 </Newslatest>
               </Ul2>
-              <Ul2>
-                <Head>
-                  <Text>Trending News</Text>
-                  <FontAwesomeIcon
-                    icon={faArrowRight}
-                    style={{ color: "#707070" }}
-                  />
-                </Head>
-                <Hr style={{ marginTop: "6%" }} />
-                <Newslatest>
-                  <img
-                    src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                    style={{ borderRadius: "5px" }}
-                    width="100px"
-                    height="100px"
-                    alt=""
-                  />
-                  <Text>
-                    <Text>Sport</Text>
-                    <Text
-                      style={{ overflow: "hidden", textOverflow: "ellipsis" }}
-                    >
-                      Tiger Woods in a Stirring Return to the Top,Capture the
-                      Master at 43
-                    </Text>
-                  </Text>
-                </Newslatest>
-                <Newslatest>
-                  <img
-                    src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                    style={{ borderRadius: "5px" }}
-                    width="100px"
-                    height="100px"
-                    alt=""
-                  />
-                  <Text>
-                    <Text>Sport</Text>
-                    <Text>
-                      Tiger Woods in a Stirring Return to the Top,Capture the
-                      Master at 43
-                    </Text>
-                  </Text>
-                </Newslatest>
-                <Newslatest>
-                  <img
-                    src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                    style={{ borderRadius: "5px" }}
-                    width="100px"
-                    height="100px"
-                    alt=""
-                  />
-                  <Text>
-                    <Text>Sport</Text>
-                    <Text>
-                      Tiger Woods in a Stirring Return to the Top,Capture the
-                      Master at 43
-                    </Text>
-                  </Text>
-                </Newslatest>
-                <Newslatest>
-                  <img
-                    src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                    style={{ borderRadius: "5px" }}
-                    width="100px"
-                    height="100px"
-                    alt=""
-                  />
-                  <Text>
-                    <Text>Sport</Text>
-                    <Text>
-                      Tiger Woods in a Stirring Return to the Top,Capture the
-                      Master at 43
-                    </Text>
-                  </Text>
-                </Newslatest>
-              </Ul2>
-              <Ul2 style={{ marginTop: "6%", height: "25vh" }}>
+              
+              <Ul2 style={{ marginTop: "6%"}}>
                 <Head>
                   <Text>Popular Tags</Text>
                   <FontAwesomeIcon icon={faPlus} style={{ color: "#575757" }} />
@@ -390,7 +315,7 @@ const Sidnav = () => {
               </Ul2>
             </Newsupdate>
           </Cardsinner>
-        </Cards>
+    
       </Mainsection>
    
     </>
