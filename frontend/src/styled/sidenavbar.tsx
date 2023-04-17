@@ -89,53 +89,66 @@ border-radius: 5px;
 `
   export const Mainsection=styled.div`
   margin-top:4.85vw;
-  position:absolute;
+  position:fixed;
   right:0;
   background: #F4F6F8;
  
+ height: 100vh;
   width: calc(100% - 253px);
   transition: all .5s ease-in-out;
  `
- export const Cards=styled.div` 
+ export const Cards=styled.div`
+/* border: 2px solid red; */
  padding:2%;
+ height:100vh;
+ width: 100%;
  `
 export const Cardsinner=styled.div` 
+ height:100vh;
 
 display:flex;
 
 `
 export const News=styled.div` 
-/* border:2px solid red; */
+/* box-shadow: -5px 2px 29px -9px rgba(0,0,0,0.82); */
+overflow: scroll;
+height: 100vh;
+/* border:2px solid green; */
 display:flex;
-gap:2%;
-flex-direction:row;
 flex-wrap:wrap;
 width:100%;
 margin-right:1%;
+border-radius: 2%;
 `
 export const Newsupdate=styled.div` 
+/* border:2px solid green; */
 
 height:100vh;
-width:40%;
-
+width:100%;
+max-width: 500px;
 `
 export const Newslatest=styled.div` 
+overflow: scroll;
 margin-top:3%;
 display:flex;
 align-items:center;
 width:100%;
 `
 export const Ul2=styled.div`
-
+box-shadow: -5px 2px 29px -9px rgba(0,0,0,0.82);
 padding:5%;
 border-radius:10px;
 background:#ffffff;
  `
 export const Newcard=styled.div`
-margin-top:3%;
+/* border: 2px solid red; */
+margin-right: auto;
+box-shadow: -5px 2px 29px -9px rgba(0,0,0,0.82);
+margin-top:2%;
 overflow:hidden;
 position:relative;
-width:27vw;
+width:100%;
+max-width:27vw;
 height:20vw;
 border-radius:5px;
 `
@@ -173,6 +186,7 @@ cursor:pointer;
 border-radius:10px;
 `
 export const Form=styled.form`
+box-shadow: -5px 2px 29px -9px rgba(0,0,0,0.82);
 position:relative;
 border-radius:1%;
 padding:4%;

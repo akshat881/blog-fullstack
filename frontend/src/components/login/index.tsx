@@ -32,7 +32,7 @@ const Login=()=>{
       timer: 1500
     })
     if(data.status===200){
-      navigate("/dash")
+      window.location.href = "/home";
 
     } 
   }

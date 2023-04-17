@@ -1,6 +1,23 @@
-
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query'
 import ReactDOM from 'react-dom/client';
+import { ReactQueryDevtools } from 'react-query/devtools'
 
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: false,
+      retry: false,
+    },
+  },
+})
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
@@ -8,9 +25,10 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-
+  <QueryClientProvider client={queryClient}>
     <App />
-  
+    <ReactQueryDevtools initialIsOpen={false} position='bottom-right'/>
+  </QueryClientProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

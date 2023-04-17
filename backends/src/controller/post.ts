@@ -1,9 +1,7 @@
 import express, { Request, Response } from "express";
 import * as jwt from "jsonwebtoken";
 import dotenv from "dotenv"
-
 import postdata from '../model/post'
-import { log } from "console";
 dotenv.config();
 
 export const posts=async(req: Request, res: Response)=>{
@@ -61,6 +59,11 @@ export const comment=(req: Request, res: Response)=>{
     })
 }
 export const postmydata=async(req: Request, res: Response)=>{
-    res.json(await postdata.find())
+    try{
+        res.json(await postdata.find())
+    }catch(e){
+        console.log("eror")
+    }
+ 
 
 }

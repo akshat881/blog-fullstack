@@ -2,7 +2,7 @@ import Forms from 'components/form'
 import Login from 'components/login'
 import Forgot from 'components/forgot'
 import Dash from 'components/dashboard'
-import Subrouts from '../subrouts'
+// import Subrouts from '../components/subrouts'
 import Error from 'components/error'
 import Reset from 'components/reset'
 import Sidnav from 'components/sidenavbar'
@@ -26,12 +26,12 @@ const routespath=[
         restricted:false
 
     },
-    {
-        path:"/dash/",
-        component:<Subrouts/>,
-        restricted:true
+    // {
+    //     path:"/dash",
+    //     component:<Sidnav/>,
+    //     restricted:true
 
-    },
+    // },
     {
         path:"*",
         component:<Error/>,
@@ -44,12 +44,12 @@ const routespath=[
         restricted:false
 
     },
-    {
-        path:"blog/:id",
-        component:<Blogs/>,
-        restricted:true
+    // {
+    //     path:"blog/:id",
+    //     component:<Blogs/>,
+    //     restricted:false
 
-    },
+    // },
 
 ]
 export default routespath;

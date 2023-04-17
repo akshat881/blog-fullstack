@@ -1,5 +1,6 @@
-import { BrowserRouter as Router,Route,Routes } from "react-router-dom";
+import { BrowserRouter ,Route,Routes } from "react-router-dom";
 import routespath from "route/index"
+import {Check} from 'helper'
 import Sidnav from 'components/sidenavbar'
 import Blogs from "components/post";
 import { ReactQueryDevtools } from 'react-query/devtools'
@@ -30,10 +31,12 @@ function App() {
 
  
  
- 
-<Router>
-<QueryClientProvider client={queryClient}>
-  <Routes>
+
+<BrowserRouter>
+
+  {
+   
+Check()?<Sidnav/>:<Routes>
     
     {
       routespath.map((data,index)=>{
@@ -47,9 +50,12 @@ function App() {
     }
 
   </Routes>
-  <ReactQueryDevtools initialIsOpen={false} position='bottom-right'/>
-  </QueryClientProvider>
-</Router>
+ 
+  }
+
+
+</BrowserRouter>
+
   );
 }
 export default App;
