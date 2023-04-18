@@ -55,8 +55,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Blogs from "components/post";
 import Dash from "components/dashboard";
+import { useSelector } from "react-redux";
 // import Subrouts from "components/subrouts";
 const Sidnav = () => {
+  const mydata=useSelector((state:any)=>{
+    return state.postdata
+  })
+ const mypostdata=mydata[0]
   const clearCookies = async () => {
     await axios
       .get("http://localhost:4000/logout", { withCredentials: true })
@@ -225,72 +230,30 @@ const Sidnav = () => {
                   />
                 </Head>
                 <Hr style={{ marginTop: "6%" }} />
-                <Newslatest>
-                  <img
-                    src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                    style={{ borderRadius: "5px" }}
-                    width="100px"
-                    height="100px"
-                    alt=""
-                  />
-                  <Text>
-                    <Text>Sport</Text>
-                    <Text
-                      style={{ overflow: "hidden", textOverflow: "ellipsis" }}
-                    >
-                      Tiger Woods in a Stirring Return to the Top,Capture the
-                      Master at 43
-                    </Text>
-                  </Text>
-                </Newslatest>
-                <Newslatest>
-                  <img
-                    src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                    style={{ borderRadius: "5px" }}
-                    width="100px"
-                    height="100px"
-                    alt=""
-                  />
-                  <Text>
-                    <Text>Sport</Text>
+                {
+                  mypostdata?.map((item:any,index:any)=>{
+                    if(index>3)
+                    return <Newslatest>
+                    <img
+                      src={item.imageData}
+                      style={{ borderRadius: "5px" }}
+                      width="100px"
+                      height="100px"
+                      alt=""
+                    />
                     <Text>
-                      Tiger Woods in a Stirring Return to the Top,Capture the
-                      Master at 43
+                      <Text>Sport</Text>
+                      <Text
+                        style={{ overflow: "hidden", textOverflow: "ellipsis" }}
+                      >
+                       {item.title}
+                      </Text>
                     </Text>
-                  </Text>
-                </Newslatest>
-                <Newslatest>
-                  <img
-                    src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                    style={{ borderRadius: "5px" }}
-                    width="100px"
-                    height="100px"
-                    alt=""
-                  />
-                  <Text>
-                    <Text>Sport</Text>
-                    <Text>
-                      Tiger Woods in a Stirring Return to the Top,Capture the
-                      Master at 43
-                    </Text>
-                  </Text>
-                </Newslatest>
-                <Newslatest>
-                  <img
-                    src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                    style={{ borderRadius: "5px" }}
-                    width="100px"
-                    height="100px"
-                    alt=""
-                  />
-                  <Text>
-                    <Text>Sport</Text>
-                    <Text>
-                      Tiger Woods in a Stirring Return to the Top,Capture the
-                      Master at 43
-                    </Text>
-                  </Text>
-                </Newslatest>
+                  </Newslatest>
+                  })
+                }
+        
+               
               </Ul2>
               
               <Ul2 style={{ marginTop: "6%"}}>

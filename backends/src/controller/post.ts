@@ -5,7 +5,7 @@ import postdata from '../model/post'
 dotenv.config();
 
 export const posts=async(req: Request, res: Response)=>{
-
+try{
     const { title,discription} = req.body;
     const imageData = req.file?.path;
     // console.log(title,discription,imageData)
@@ -37,6 +37,10 @@ export const posts=async(req: Request, res: Response)=>{
         
     })
     return res.status(200).json({message:"succes"})
+}
+catch(err){
+     res.status(400).json({message:"some error"})
+}
 }
 export const comment=(req: Request, res: Response)=>{
     if(req.body.like=='1'){

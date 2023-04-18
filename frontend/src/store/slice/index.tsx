@@ -6,7 +6,7 @@ const PostContent=createSlice({
     initialState:[],
     reducers:{
         addpost:(state:any,action:PayloadAction<any>):any=>{
-            return[...state,action.payload]
+            return[action.payload,...state]
         }
     }
 })
