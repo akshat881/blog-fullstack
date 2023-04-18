@@ -36,9 +36,7 @@ const [show,set]=useState()
       timer: 1500
     })
     if(data.status===200){
-     await axios.get('http://localhost:4000/postdata').then((data)=>{
-        dispatch(addpost(data.data))
-      })
+
 
       window.location.href = "/home";
 

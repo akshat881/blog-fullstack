@@ -55,9 +55,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Blogs from "components/post";
 import Dash from "components/dashboard";
-import { useSelector } from "react-redux";
+import {  useDispatch,useSelector } from "react-redux";
+import { addpost } from 'store/slice';
 // import Subrouts from "components/subrouts";
 const Sidnav = () => {
+  const dispatch=useDispatch();
+const {data}= useGet("/postdata")
+  useEffect(()=>{
+dispatch(addpost(data?.data))
+  },[data])
   const mydata=useSelector((state:any)=>{
     return state.postdata
   })
@@ -232,7 +238,7 @@ const Sidnav = () => {
                 <Hr style={{ marginTop: "6%" }} />
                 {
                   mypostdata?.map((item:any,index:any)=>{
-                    if(index>3)
+                    if(index<4)
                     return <Newslatest>
                     <img
                       src={item.imageData}

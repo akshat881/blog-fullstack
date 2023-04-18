@@ -93,7 +93,7 @@ border-radius: 5px;
   margin-top:4.85vw;
   position:absolute;
   right:0;
-  height:100vh;
+  height:105vh;
   background: #F4F6F8;
  /* border: 2px solid green; */
   width: calc(100% - 253px);
@@ -107,8 +107,9 @@ padding:1%;
  width: 100%;
  `
 export const Cardsinner=styled.div` 
-
+  background: #F4F6F8;
  height:100vh;
+
 /* border: 2px solid yellow; */
 display:flex;
 
