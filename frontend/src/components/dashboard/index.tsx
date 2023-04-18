@@ -6,6 +6,7 @@ import { useGet,usePostdata} from 'hooks';
 import {useForm,SubmitHandler} from 'react-hook-form'
 import {useNavigate,Link} from "react-router-dom";
 import axios from 'axios';
+import Swal from 'sweetalert2'
 import { useEffect, useState } from 'react';
 import { useSelector } from "react-redux";
 const Dash=()=>{
@@ -21,7 +22,7 @@ const imgtext=(e:any)=>{
   console.log(e.target.files[0].name);
   set(true)
 }
-
+const myData=usePostdata()
 const { register, handleSubmit} = useForm();
 const onSubmit=async(userpost:any)=>{ 
 
@@ -29,8 +30,17 @@ const onSubmit=async(userpost:any)=>{
   formData.append('title', userpost.title);
   formData.append('discription', userpost.discription);
   formData.append('imageData', userpost.imageData[0]);
-  const response = await axios.post('http://localhost:4000/dash', formData);
-  console.log(response);
+await myData("/dash",formData).then((response)=>{
+    Swal.fire({
+      position: 'top-end',
+      icon: response.data.icon,
+      title: `${response.data.message}`,
+      showConfirmButton: false,
+      timer: 1500
+    })
+  })
+
+
 
 }
     return( 

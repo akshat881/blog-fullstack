@@ -25,22 +25,25 @@ const [show,set]=useState()
 
 
 
-    axios.defaults.withCredentials = true;
-    const data=await myData("/login",userdata);
 
-    Swal.fire({
-      position: 'top-end',
-      icon: data.data.icon,
-      title: `${data.data.message}`,
-      showConfirmButton: false,
-      timer: 1500
+   await myData("/login",userdata).then((data)=>{
+      Swal.fire({
+        position: 'top-end',
+        icon: data.data.icon,
+        title: `${data.data.message}`,
+        showConfirmButton: false,
+        timer: 1500
+      })
+      if(data.status===200){
+
+        navigate("/home")
+        //  window.location.href = "/home";
+  
+      } 
     })
-    if(data.status===200){
 
 
-      window.location.href = "/home";
-
-    } 
+  
   }
    
    

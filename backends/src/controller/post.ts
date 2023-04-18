@@ -21,22 +21,26 @@ try{
       comment:[],
       likes: [],
       dislikes: 0,
-      imageData:imageData
+      imageData:imageData,
+      
     });
 
      await mypost.save()
     .then((data)=>{
         console.log(data)
         if(!data){
-         res.status(204).json({message:"some error"})
+         res.status(204).json({message:"some error",icon:"warning"})
        
+        }
+        else{
+            res.status(200).json({message:"succes",icon:"success"})
         }
     }).catch((e)=>{
         // res.status(500).json({message:"server error"})
         console.log(e);
         
     })
-    return res.status(200).json({message:"succes"})
+    
 }
 catch(err){
      res.status(400).json({message:"some error"})

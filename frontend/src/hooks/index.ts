@@ -10,9 +10,7 @@ return useQuery(url,data)
     const post_data=async(url:string,content:any)=>{
         return await instance.post(url,
         content, {
-            headers: {
-              'Content-Type': 'application/json'
-            },withCredentials:true
+    withCredentials:true
         }
     )
     }
