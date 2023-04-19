@@ -17,7 +17,7 @@ const Blogs=()=>{
 
        if(item._id===id){
               const disp=item.discription.split(".")
-              const displen=disp.length/2;
+              const displen=disp.length/20;
 return(
      
        <Main>

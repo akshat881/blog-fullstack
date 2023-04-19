@@ -26,12 +26,12 @@ const routespath=[
         restricted:false
 
     },
-    // {
-    //     path:"/dash",
-    //     component:<Sidnav/>,
-    //     restricted:true
+    {
+        path:"/home",
+        component:<Sidnav/>,
+        restricted:true
 
-    // },
+    },
     {
         path:"*",
         component:<Error/>,

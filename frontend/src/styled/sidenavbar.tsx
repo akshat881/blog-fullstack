@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
  export const Container=styled.div`
  position :fixed;
  left:0;
@@ -26,7 +26,7 @@ left:0;
 
  `
  export const List=styled.div`
-   margin-top:10%;
+   margin-top:7%;
  margin-left: 15%;
  `
  export const Hr=styled.div<{width?:string,left?:string}>`
@@ -36,12 +36,28 @@ left:0;
    border:1px solid #EEF1F2;
    margin-top: 10%;
  `
- export const Linkbar=styled(Link)`
+ export const Linkbar=styled(NavLink)`
+ padding: 6%;
  text-decoration:none;
 display: flex;
 align-items: center;
    width: 100%;
    color:black;
+   transition: all ease-in .01s;
+   &.active{
+    background: #e6e6f3;
+    color: #040480;
+    border-radius: 5px 0 0 5px;
+    /* transition: all ease-in .5s; */
+border-right: 3px solid blue;
+   }
+   &:hover{
+    background: #e6e6f3;
+    color: #040480;
+    border-radius: 5px 0 0 5px;
+    /* transition: all ease-in .5s; */
+border-right: 3px solid blue;
+   }
  `
  export const Text=styled.p`
 

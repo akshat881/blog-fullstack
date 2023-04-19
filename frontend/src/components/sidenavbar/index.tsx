@@ -100,7 +100,7 @@ dispatch(addpost(data?.data))
           </List>
           <Hr left="7%" width="80%" />
           <List>
-            <Linkbar to="/blog/djfndjfndj">
+            <Linkbar to="/blog/hjryhjythjndjfndj">
               <FontAwesomeIcon
                 icon={faNewspaper}
                 style={{ color: "#9c9c9c" }}
@@ -115,20 +115,20 @@ dispatch(addpost(data?.data))
             </Linkbar>
           </List>
           <List>
-            <Linkbar to="/blog/djfndjfndj">
+            <Linkbar to="/blog/djfndjj">
               <FontAwesomeIcon icon={faMusic} style={{ color: "#949494" }} />
               <Text>Music</Text>
             </Linkbar>
           </List>
           <List>
-            <Linkbar to="/blog/djfndjfndj">
+            <Linkbar to="/blog/djfndj">
               <FontAwesomeIcon icon={faPlane} style={{ color: "#545454" }} />
               <Text>Travel</Text>
             </Linkbar>
           </List>
           <Hr left="7%" width="80%" />
           <List>
-            <Linkbar to="/blog/djfndjfndj">
+            <Linkbar to="/blog/djndj">
               <FontAwesomeIcon
                 icon={faCircleUser}
                 style={{ color: "#787878" }}
@@ -137,13 +137,13 @@ dispatch(addpost(data?.data))
             </Linkbar>
           </List>
           <List>
-            <Linkbar to="/blog/djfndjfndj">
+            <Linkbar to="/blog/ndjfndj">
               <FontAwesomeIcon icon={faGear} style={{ color: "#8a8a8a" }} />
               <Text>Setting</Text>
             </Linkbar>
           </List>
           <List>
-            <Linkbar to="/blog/djfndjfndj">
+            <Linkbar to="/blog/djfndj">
               <FontAwesomeIcon icon={faLifeRing} style={{ color: "#999999" }} />
               <Text>Help & Support</Text>
             </Linkbar>
@@ -223,7 +223,7 @@ dispatch(addpost(data?.data))
           
               <Routes>
                 <Route path="blog/:id" element={<Blogs />} />
-                <Route path="/home" element={<Dash />} />
+                <Route path="/" element={<Dash />} />
               </Routes>
             </News>
             <Newsupdate>
@@ -237,7 +237,7 @@ dispatch(addpost(data?.data))
                 </Head>
                 <Hr style={{ marginTop: "6%" }} />
                 {
-                  mypostdata?.map((item:any,index:any)=>{
+                  mypostdata?.slice(0).reverse().map((item:any,index:any)=>{
                     if(index<4)
                     return <Newslatest>
                     <img
