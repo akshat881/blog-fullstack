@@ -26,6 +26,7 @@ import {
   Mainsection,
   Cards,
   Cardimg,
+  FontAwesomeIco,
 } from "styled/sidenavbar";
 import {
   faNewspaper,
@@ -47,7 +48,7 @@ import {
   faImage,
   faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIco } from "@fortawesome/react-fontawesome";
 import { useGet, usePostdata } from "hooks";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -83,7 +84,7 @@ dispatch(addpost(data?.data))
           <List>
             <Head>
               <img src={Bg} style={{ maxWidth: "40%" }} />
-              <FontAwesomeIcon icon={faBars} style={{ color: "#a3a3a3" }} />
+              <FontAwesomeIco icon={faBars}  />
             </Head>
           </List>
           <Hr />
@@ -101,58 +102,58 @@ dispatch(addpost(data?.data))
           <Hr left="7%" width="80%" />
           <List>
             <Linkbar to="/blog/hjryhjythjndjfndj">
-              <FontAwesomeIcon
+              <FontAwesomeIco
                 icon={faNewspaper}
-                style={{ color: "#9c9c9c" }}
+               
               />
               <Text>News</Text>
             </Linkbar>
           </List>
           <List>
             <Linkbar to="/home">
-              <FontAwesomeIcon icon={faFilm} style={{ color: "#9c9c9c" }} />
+              <FontAwesomeIco icon={faFilm}  />
               <Text>Movie</Text>
             </Linkbar>
           </List>
           <List>
             <Linkbar to="/blog/djfndjj">
-              <FontAwesomeIcon icon={faMusic} style={{ color: "#949494" }} />
+              <FontAwesomeIco icon={faMusic}  />
               <Text>Music</Text>
             </Linkbar>
           </List>
           <List>
             <Linkbar to="/blog/djfndj">
-              <FontAwesomeIcon icon={faPlane} style={{ color: "#545454" }} />
+              <FontAwesomeIco icon={faPlane}  />
               <Text>Travel</Text>
             </Linkbar>
           </List>
           <Hr left="7%" width="80%" />
           <List>
             <Linkbar to="/blog/djndj">
-              <FontAwesomeIcon
+              <FontAwesomeIco
                 icon={faCircleUser}
-                style={{ color: "#787878" }}
+              
               />
               <Text>Account</Text>
             </Linkbar>
           </List>
           <List>
             <Linkbar to="/blog/ndjfndj">
-              <FontAwesomeIcon icon={faGear} style={{ color: "#8a8a8a" }} />
+              <FontAwesomeIco icon={faGear}  />
               <Text>Setting</Text>
             </Linkbar>
           </List>
           <List>
             <Linkbar to="/blog/djfndj">
-              <FontAwesomeIcon icon={faLifeRing} style={{ color: "#999999" }} />
+              <FontAwesomeIco icon={faLifeRing}  />
               <Text>Help & Support</Text>
             </Linkbar>
           </List>
           <List onClick={clearCookies}>
             <Linkbar to="/blog/djfndjfndj">
-              <FontAwesomeIcon
+              <FontAwesomeIco
                 icon={faArrowRightFromBracket}
-                style={{ color: "#707070" }}
+               
               />
               <Text>Log Out</Text>
             </Linkbar>
@@ -162,7 +163,7 @@ dispatch(addpost(data?.data))
       <Upernav>
         <Navitem>
           <Navtext>
-            <Linkbar to="/blog/djfndjfndj">
+            <Linkbar  to="/blog/djfndjfndj">
               <Text>Latest News</Text>
             </Linkbar>
 
@@ -183,7 +184,7 @@ dispatch(addpost(data?.data))
           </Navtext>
 
           <Sideitem>
-            <FontAwesomeIcon
+            <FontAwesomeIco
               icon={faBell}
               style={{
                 width: "60px",
@@ -192,21 +193,21 @@ dispatch(addpost(data?.data))
                 borderLeft: "2px solid  #EEF1F2 ",
               }}
             />
-            <FontAwesomeIcon
+            <FontAwesomeIco
               icon={faComments}
               style={{
                 width: "60px",
-                color: "#757575",
+           
                 borderRight: "2px solid  #EEF1F2 ",
                 borderLeft: "2px solid  #EEF1F2 ",
               }}
             />
             <Input placeholder="Type to search" />
             <div style={{ position: "relative" }}>
-              <FontAwesomeIcon
+              <FontAwesomeIco
                 icon={faMagnifyingGlass}
                 style={{
-                  color: "#707070",
+           
                   position: "absolute",
                   top: "-8px",
                   right: "35px",
@@ -230,9 +231,9 @@ dispatch(addpost(data?.data))
               <Ul2>
                 <Head>
                   <Text>Trending News</Text>
-                  <FontAwesomeIcon
+                  <FontAwesomeIco
                     icon={faArrowRight}
-                    style={{ color: "#707070" }}
+          
                   />
                 </Head>
                 <Hr style={{ marginTop: "6%" }} />
@@ -265,7 +266,7 @@ dispatch(addpost(data?.data))
               <Ul2 style={{ marginTop: "6%"}}>
                 <Head>
                   <Text>Popular Tags</Text>
-                  <FontAwesomeIcon icon={faPlus} style={{ color: "#575757" }} />
+                  <FontAwesomeIco icon={faPlus}  />
                 </Head>
                 <Hr style={{ marginTop: "6%" }} />
                 <Tag>

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {NavLink} from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
  export const Container=styled.div`
  position :fixed;
  left:0;
@@ -11,11 +12,15 @@ overflow: hidden;
  -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none; 
  `
+
  export const Head=styled.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
 width: 90%;
+ `
+ export const FontAwesomeIco=styled(FontAwesomeIcon)`
+ color: #919191;
  `
  export const Ul=styled.div`
 position: absolute;
@@ -44,12 +49,15 @@ align-items: center;
    width: 100%;
    color:black;
    transition: all ease-in .01s;
-   &.active{
+   &.active {
     background: #e6e6f3;
     color: #040480;
     border-radius: 5px 0 0 5px;
     /* transition: all ease-in .5s; */
 border-right: 3px solid blue;
+   }
+   &.active ~ $(FontAwesomeIco){
+    background:#040480;
    }
    &:hover{
     background: #e6e6f3;
@@ -57,6 +65,10 @@ border-right: 3px solid blue;
     border-radius: 5px 0 0 5px;
     /* transition: all ease-in .5s; */
 border-right: 3px solid blue;
+   }
+   &:hover ~ $(FontAwesomeIco){
+background:#040480;
+
    }
  `
  export const Text=styled.p`
