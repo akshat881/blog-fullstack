@@ -59,7 +59,7 @@ import Dash from "components/dashboard";
 import {  useDispatch,useSelector } from "react-redux";
 import { addpost } from 'store/slice';
 // import Subrouts from "components/subrouts";
-const Sidnav = () => {
+const Sidnav = ({children}:any) => {
   const dispatch=useDispatch();
 const {data}= useGet("/postdata")
 
@@ -225,10 +225,7 @@ dispatch(addpost(data?.data))
           <Cardsinner>
             <News>
           
-              {/* <Routes>
-                <Route path="blog/:id" element={<Blogs />} />
-                <Route path="/home/:userid" element={<Dash />} />
-              </Routes> */}
+              {children}
             </News>
             <Newsupdate>
               <Ul2>

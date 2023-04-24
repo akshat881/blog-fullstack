@@ -11,10 +11,10 @@ return(
   subroutespath.map((path,index)=>{
     if(path){
       navigate(`${path}`)
-      showmodal(false)
+      
     }
     else{
-      showmodal(true)
+      
     }
   })
 

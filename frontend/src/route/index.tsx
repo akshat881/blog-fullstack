@@ -27,8 +27,8 @@ const routespath=[
 
     },
     {
-        path:"/home/:userid",
-        component:<Sidnav/>,
+        path:"/home/:id",
+        component:<Dash/>,
         restricted:true
 
     },
@@ -44,12 +44,12 @@ const routespath=[
         restricted:false
 
     },
-    // {
-    //     path:"blog/:id",
-    //     component:<Blogs/>,
-    //     restricted:false
+    {
+        path:"blog/:id",
+        component:<Blogs/>,
+        restricted:true
 
-    // },
+    },
 
 ]
 export default routespath;
