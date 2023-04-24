@@ -6,10 +6,10 @@ import { Container, Card,Input, Form, H3, Text,H2, Button } from 'styled/form'
 import {Formuser} from 'interface'
 import axios from 'axios';
 import { useDispatch, useSelector } from "react-redux";
-// import Post from 'api/post'
+
 import {useGet, usePostdata} from 'hooks/index'
 import Bg from 'Assets/Logo/WITS@4x.svg'
-import { addpost } from 'store/slice';
+import { addpost, adduser } from 'store/slice';
 import { useState } from 'react';
 const Login=()=>{
   const dispatch=useDispatch();
@@ -17,15 +17,9 @@ const Login=()=>{
   const { register, handleSubmit} = useForm<Formuser>();
   const myData=usePostdata()
 const [show,set]=useState()
-  // const {data}=useGet("/postdata")
 
-  // const mypostdata=data?.data;
   const onSubmit: SubmitHandler<Formuser> =async(userdata)=>{
  
-
-
-
-
    await myData("/login",userdata).then((data)=>{
     console.log(data.data.userdetail._id)
       Swal.fire({
@@ -36,9 +30,9 @@ const [show,set]=useState()
         timer: 1500
       })
       if(data.status===200){
-
+        dispatch(adduser(data.data.userdetail))
         navigate(`/home/${data.data.userdetail._id}`)
-        //  window.location.href = "/home";
+
   
       } 
     })
@@ -49,7 +43,6 @@ const [show,set]=useState()
    
    
 
-  // };
 
     return( 
       <>

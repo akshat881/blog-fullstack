@@ -54,8 +54,46 @@ align-items: center;
     background: #e6e6f3;
     color: #040480;
     border-radius: 5px 0 0 5px;
-    transition: all ease-in .01s;
+    transition: all 0.1s cubic-bezier(0.23, -1.95, 0, 4.7) 0s;
 border-right: 3px solid blue;
+   }
+   &.active ~ ${FontAwesomeIco}{
+    color:#040480;
+    transition: all 0.1s cubic-bezier(0.23, -1.95, 0, 4.7) 0s;
+   }
+
+   &:hover ~ ${FontAwesomeIco}{
+    color:#040480;
+    transition: aall 0.1s cubic-bezier(0.23, -1.95, 0, 4.7) 0s;
+   }
+   &:hover{
+    background: right / 0% 50%  linear-gradient(#e6e6f3,#e6e6f3);
+    transition: all 0.1s cubic-bezier(0.23, -1.95, 0, 4.7) 0s;
+    color: #040480;
+    border-radius: 5px 0 0 5px;
+border-right: 3px solid blue;
+   }
+   &:hover{
+    background: left / 100% 100% no-repeat linear-gradient(#e6e6f3,#e6e6f3);
+    transition: all 0.1s cubic-bezier(0.23, -1.95, 0, 4.7) 0s;
+   }
+ `
+ export const Linkbarup=styled(NavLink)`
+ padding: 6%;
+ text-decoration:none;
+display: flex;
+justify-content:center;
+align-items: center;
+   width: 100%;
+   color:black;
+   transition: all 0.1s cubic-bezier(0.23, -1.95, 0, 4.7) 0s;
+
+   &.active {
+
+    color: #040480;
+
+    transition: all 0.1s cubic-bezier(0.23, -1.95, 0, 4.7) 0s;
+border-bottom: 3px solid blue;
    }
    &.active ~ ${FontAwesomeIco}{
     color:#040480;
@@ -63,23 +101,21 @@ border-right: 3px solid blue;
 
    &:hover ~ ${FontAwesomeIco}{
     color:#040480;
+    transition: all 0.1s cubic-bezier(0.23, -1.95, 0, 4.7) 0s;
 
    }
    &:hover{
-    background: right / 0% 50%  linear-gradient(#e6e6f3,#e6e6f3);
 
-    transition: background-size 500ms;
+
+    transition: all 0.1s cubic-bezier(0.23, -1.95, 0, 4.7) 0s;
     color: #040480;
-    border-radius: 5px 0 0 5px;
-border-right: 3px solid blue;
+
+border-bottom: 3px solid blue;
    }
-   &:hover{
-    background: left / 100% 100% no-repeat linear-gradient(#e6e6f3,#e6e6f3);
-    transition: background-size 500ms;
-   }
+ 
  `
  export const Text=styled.p`
-
+/* border:2px solid red; */
    padding:0.1rem 1rem;
    
  `
@@ -102,12 +138,14 @@ border-right: 3px solid blue;
  align-items: center;
  justify-content: space-between;
  width: 100%;
- border: 2px solid green;
+
    `
  export const Navtext=styled.div`
  display: flex;
+justify-content: space-evenly;
+width:50%;
+height:100%;
 
-border: 2px solid blue;
    `
  export const Sideitem=styled.div` 
  gap:5%;

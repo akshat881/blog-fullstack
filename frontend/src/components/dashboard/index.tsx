@@ -1,6 +1,6 @@
 import Bg from 'Assets/Logo/WITS@4x.svg'
 import {Linkbar,Form,Button,Cardcontent,Span,Tag,Ul2,Newslatest,Newcard,Newsupdate,News,Cardsinner,Container,Ul,List,Hr,Text,Head,Upernav,Navitem,Navtext,Sideitem,Input,Mainsection,Cards, Cardimg} from 'styled/sidenavbar';
-import { faNewspaper,faBars,faFilm,faMusic,faPlane,faUser, faCircleUser, faGear, faLifeRing, faArrowRightFromBracket, faComments, faBell, faMagnifyingGlass, faArrowRight, faPlus, faHeart, faImage, faCircleXmark} from '@fortawesome/free-solid-svg-icons';
+import { faNewspaper,faBars,faFilm,faMusic,faPlane,faUser, faCircleUser, faGear, faLifeRing, faArrowRightFromBracket, faComments, faBell, faMagnifyingGlass, faArrowRight, faPlus, faHeart, faImage, faCircleXmark, faUserPlus} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useGet,usePostdata} from 'hooks';
 import {useForm,SubmitHandler} from 'react-hook-form'
@@ -13,7 +13,12 @@ const Dash=()=>{
   const mydata=useSelector((state:any)=>{
     return state.postdata
   })
+  const user=useSelector((state:any)=>{
+    return state.postuser
+  })
+  console.log(user[0].profile)
  const mypostdata=mydata[0]
+ console.log(mypostdata)
   const [sowimg,setimg]=useState()
   const [sow,set]=useState(false)
 
@@ -48,7 +53,7 @@ await myData("/dash",formData).then((response)=>{
   <Form onSubmit={handleSubmit(onSubmit)}>
 
   <div style={{display:"flex",justifyContent:"space-between"}}>
-<img src="https://api.dicebear.com/6.x/bottts/png?seed=abhishake" width="50px" height="50px" alt="" />
+<img src={user[0].profile} width="50px" height="50px" alt="" />
 <Input {...register("title")}style={{borderRadius:"50px",width:"90%",background:"#EEF1F2"}}/>
 </div>
 <textarea {...register("discription")}style={{borderRadius:"30px",marginTop:"2%",height:"20vw",border:"2px solid #EEF1F2",padding:"2%"}}></textarea>
@@ -99,6 +104,7 @@ return(
   <FontAwesomeIcon icon={faCircleUser} style={{color: "#787878",marginLeft:"3%"}} />
 <Text>Akshat</Text>
     <FontAwesomeIcon icon={faHeart} style={{color: "#696969",marginLeft:"auto"}} />
+    <FontAwesomeIcon icon={faUserPlus} />
   </Tag>
   </Cardcontent>
  </Newcard> )

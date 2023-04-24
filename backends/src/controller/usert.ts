@@ -157,11 +157,12 @@ export const forgot = async (req: Request, res: Response) => {
 res.clearCookie('usersesion	',{path:"/"})
 res.status(200).send("clear")
   }
-  // export const userdetail=async(req: Request, res: Response)=>{
-  //   try{
-  //     res.json(await user_model.findOne({email:req.body.email}))
-  //   }catch(e){
-  //     console.log("eror")
-  //   }
+  export const userdetail=async(req: Request, res: Response)=>{
+    try{
+      console.log(req.body.email)
+      res.json(await user_model.findOne({_id:req.body.email}))
+    }catch(e){
+      console.log("eror")
+    }
     
-  // }
+  }
