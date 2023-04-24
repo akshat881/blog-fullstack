@@ -5,7 +5,7 @@ const subroutespath=[
     
     
     {
-        path:"/home",
+        path:"/home/:userid",
         component:<Dash/>,
       
 

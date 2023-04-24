@@ -1,25 +1,34 @@
-import {  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
-  Routes, } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Sidnav from '../sidenavbar'
 import Blogs from "components/post";
 import Dash from "components/dashboard";
-import { News } from "styled/sidenavbar";
+import  subroutespath from '../subrouts/route';
 
-  export const router = createBrowserRouter(
-    createRoutesFromElements(
-      <Routes>
-                <Route path="blo/:id" element={<Blogs />} />
-                <Route path="/home" element={<Dash />} />
-              </Routes>
-    )
-  );
+  export const Mycontent=()=>{
+    const navigate=useNavigate()
+return(
+
+  subroutespath.map((path,index)=>{
+    if(path){
+      navigate(`${path}`)
+      showmodal(false)
+    }
+    else{
+      showmodal(true)
+    }
+  })
+
+)
+  }
+
+  
+
  
 
 
 
      
+
+
 
 

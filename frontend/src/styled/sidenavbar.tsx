@@ -66,10 +66,16 @@ border-right: 3px solid blue;
 
    }
    &:hover{
-    background: #e6e6f3;
+    background: right / 0% 50%  linear-gradient(#e6e6f3,#e6e6f3);
+
+    transition: background-size 500ms;
     color: #040480;
     border-radius: 5px 0 0 5px;
 border-right: 3px solid blue;
+   }
+   &:hover{
+    background: left / 100% 100% no-repeat linear-gradient(#e6e6f3,#e6e6f3);
+    transition: background-size 500ms;
    }
  `
  export const Text=styled.p`

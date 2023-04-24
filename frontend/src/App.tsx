@@ -37,7 +37,7 @@ function App() {
 
   {
    
-Check()?<Sidnav/>:<Routes>
+<Routes>
     
     {
       routespath.map((data,index)=>{

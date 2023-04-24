@@ -225,10 +225,10 @@ dispatch(addpost(data?.data))
           <Cardsinner>
             <News>
           
-              <Routes>
+              {/* <Routes>
                 <Route path="blog/:id" element={<Blogs />} />
-                <Route path="/" element={<Dash />} />
-              </Routes>
+                <Route path="/home/:userid" element={<Dash />} />
+              </Routes> */}
             </News>
             <Newsupdate>
               <Ul2>
