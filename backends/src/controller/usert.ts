@@ -49,7 +49,7 @@ export const login = async (req: Request, res: Response) => {
                     console.log(token);
                     res.cookie('usersesion', token, { httpOnly: true });
            
-                    res.status(200).json({message: `login succesfull with tokken`,icon:"success"})
+                    res.status(200).json({message: `login succesfull with tokken`,icon:"success",userdetail:data})
                 });
 
             }
@@ -157,3 +157,11 @@ export const forgot = async (req: Request, res: Response) => {
 res.clearCookie('usersesion	',{path:"/"})
 res.status(200).send("clear")
   }
+  // export const userdetail=async(req: Request, res: Response)=>{
+  //   try{
+  //     res.json(await user_model.findOne({email:req.body.email}))
+  //   }catch(e){
+  //     console.log("eror")
+  //   }
+    
+  // }

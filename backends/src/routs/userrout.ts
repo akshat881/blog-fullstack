@@ -11,4 +11,5 @@ userrout.get("/auth",validate,(req,res)=>{
 
     res.status(200).json({message:true})
   })
+  // userrout.post("/user",validate,userdetail)
 export default userrout;

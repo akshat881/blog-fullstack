@@ -27,7 +27,7 @@ const routespath=[
 
     },
     {
-        path:"/home",
+        path:"/home/:userid",
         component:<Sidnav/>,
         restricted:true
 

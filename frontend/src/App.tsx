@@ -6,6 +6,7 @@ import Blogs from "components/post";
 import { ReactQueryDevtools } from 'react-query/devtools'
 import ProtectedRoutes from "route/private";
 import PublicRoutes from "route/public";
+
 import {
   useQuery,
   useMutation,

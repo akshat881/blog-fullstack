@@ -62,8 +62,10 @@ import { addpost } from 'store/slice';
 const Sidnav = () => {
   const dispatch=useDispatch();
 const {data}= useGet("/postdata")
+
   useEffect(()=>{
 dispatch(addpost(data?.data))
+
   },[data])
   const mydata=useSelector((state:any)=>{
     return state.postdata
@@ -73,6 +75,7 @@ dispatch(addpost(data?.data))
     await axios
       .get("http://localhost:4000/logout", { withCredentials: true })
       .then(() => {
+        localStorage.clear();
         window.location.href = "/";
       });
   };
@@ -110,7 +113,7 @@ dispatch(addpost(data?.data))
             </Linkbar>
           </List>
           <List>
-            <Linkbar to="/home">
+            <Linkbar to="/">
               <FontAwesomeIco icon={faFilm}  />
               <Text>Movie</Text>
             </Linkbar>
@@ -161,24 +164,24 @@ dispatch(addpost(data?.data))
         </Ul>
       </Container>
       <Upernav>
-        <Navitem>
+
           <Navtext>
-            <Linkbar  to="/blog/djfndjfndj">
+            <Linkbar style={{padding:"0"}} to="/blog/djfndjfndj">
               <Text>Latest News</Text>
             </Linkbar>
 
-            <Linkbar to="/blog/djfndjfndj">
+            <Linkbar style={{padding:"0"}}to="/blog/djfndjfndj">
               <Text>Political</Text>
             </Linkbar>
 
-            <Linkbar to="/blog/djfndjfndj">
+            <Linkbar style={{padding:"0"}}to="/blog/djfndjfndj">
               <Text>Business</Text>
             </Linkbar>
 
-            <Linkbar to="/blog/djfndjfndj">
+            <Linkbar style={{padding:"0"}}to="/blog/djfndjfndj">
               <Text>Sports</Text>
             </Linkbar>
-            <Linkbar to="/blog/djfndjfndj">
+            <Linkbar style={{padding:"0"}}to="/blog/djfndjfndj">
               <Text>Teach</Text>
             </Linkbar>
           </Navtext>
@@ -215,7 +218,7 @@ dispatch(addpost(data?.data))
               />
             </div>
           </Sideitem>
-        </Navitem>
+
       </Upernav>
       <Mainsection>
   
@@ -238,9 +241,11 @@ dispatch(addpost(data?.data))
                 </Head>
                 <Hr style={{ marginTop: "6%" }} />
                 {
-                  mypostdata?.slice(0).reverse().map((item:any,index:any)=>{
-                    if(index<4)
-                    return <Newslatest>
+                  mypostdata?.slice(4).reverse().map((item:any,index:any)=>{
+                   
+              
+                    return <Newslatest key={index}>
+                   
                     <img
                       src={item.imageData}
                       style={{ borderRadius: "5px" }}

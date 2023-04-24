@@ -20,7 +20,7 @@ align-items: center;
 width: 90%;
  `
  export const FontAwesomeIco=styled(FontAwesomeIcon)`
- color: #919191;
+ /* color: #919191; */
  `
  export const Ul=styled.div`
 position: absolute;
@@ -49,26 +49,27 @@ align-items: center;
    width: 100%;
    color:black;
    transition: all ease-in .01s;
+
    &.active {
     background: #e6e6f3;
     color: #040480;
     border-radius: 5px 0 0 5px;
-    /* transition: all ease-in .5s; */
+    transition: all ease-in .01s;
 border-right: 3px solid blue;
    }
-   &.active ~ $(FontAwesomeIco){
-    background:#040480;
+   &.active ~ ${FontAwesomeIco}{
+    color:#040480;
+   }
+
+   &:hover ~ ${FontAwesomeIco}{
+    color:#040480;
+
    }
    &:hover{
     background: #e6e6f3;
     color: #040480;
     border-radius: 5px 0 0 5px;
-    /* transition: all ease-in .5s; */
 border-right: 3px solid blue;
-   }
-   &:hover ~ $(FontAwesomeIco){
-background:#040480;
-
    }
  `
  export const Text=styled.p`
@@ -87,6 +88,7 @@ background:#040480;
   z-index: 2;
  display: flex;
  align-items: center;
+ justify-content: space-between;
  border-bottom:2px solid  #EEF1F2 ;
    `
  export const Navitem=styled.div`
@@ -94,12 +96,12 @@ background:#040480;
  align-items: center;
  justify-content: space-between;
  width: 100%;
-
+ border: 2px solid green;
    `
  export const Navtext=styled.div`
- margin-left: 5%;
  display: flex;
-width: 50%;
+
+border: 2px solid blue;
    `
  export const Sideitem=styled.div` 
  gap:5%;
@@ -192,7 +194,7 @@ margin-top:2%;
 overflow:hidden;
 position:relative;
 width:100%;
-max-width:27vw;
+max-width:28vw;
 height:20vw;
 border-radius:5px;
 `

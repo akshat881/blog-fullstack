@@ -55,7 +55,7 @@ font-family:'Inter';
     color: black;
 
 `
-export const Text = styled.p`
+export const Text = styled.div`
 margin-left:auto;
 font-family:'Poppins';
    font-size: 1em;

@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import {postuer} from '../store/slice'
+import {postuer,postuser} from '../store/slice'
 import { combineReducers } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
@@ -10,11 +10,13 @@ const persistConfig = {
 
   const combiner = combineReducers({ 
     postdata:postuer,
+    postuser:postuser
   
   })
   const persistor = persistReducer(persistConfig, combiner)
 export const store=configureStore({
-    reducer: persistor
+    reducer: persistor,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({serializableCheck: false}),
 });
 
  export type RootState = ReturnType<typeof store.getState>;

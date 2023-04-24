@@ -27,6 +27,7 @@ const [show,set]=useState()
 
 
    await myData("/login",userdata).then((data)=>{
+    console.log(data.data.userdetail._id)
       Swal.fire({
         position: 'top-end',
         icon: data.data.icon,
@@ -36,7 +37,7 @@ const [show,set]=useState()
       })
       if(data.status===200){
 
-        navigate("/home")
+        navigate(`/home/${data.data.userdetail._id}`)
         //  window.location.href = "/home";
   
       } 

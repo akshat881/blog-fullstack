@@ -85,9 +85,9 @@ await myData("/dash",formData).then((response)=>{
 </Form>
 {
   
-  mypostdata?.map((item:any)=>{
+  mypostdata?.map((item:any,index:any)=>{
 return(
- <Newcard>
+ <Newcard key={index}>
   <Link to={`/blog/${item._id}`}>
 <img src={item.imageData} width="600px" height="250px"alt="" />
 </Link>
