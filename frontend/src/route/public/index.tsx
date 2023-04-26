@@ -9,7 +9,7 @@ const  PublicRoutes=(props:any)=>{
   const {component} = props;
   const id=user[0]?._id;
 
-   console.log(component)
+  //  console.log(component)
     if (Check()) return <Navigate to={`/home/${id}`}/>;
  
   return component;

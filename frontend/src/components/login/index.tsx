@@ -21,7 +21,7 @@ const [show,set]=useState()
   const onSubmit: SubmitHandler<Formuser> =async(userdata)=>{
  
    await myData("/login",userdata).then((data)=>{
-    console.log(data.data.userdetail._id)
+    // console.log(data.data.userdetail._id)
       Swal.fire({
         position: 'top-end',
         icon: data.data.icon,

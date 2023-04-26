@@ -54,29 +54,33 @@ import { useGet, usePostdata } from "hooks";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addpost } from "store/slice";
+import { addpost, adduser } from "store/slice";
 import { Link ,useParams} from "react-router-dom";
+import { useMutation,useQuery } from "react-query";
 const Sidnav = ({ children }: any) => {
   const {id}=useParams();
-  console.log(id)
+
   axios.defaults.withCredentials = true;
-
-
   const dispatch = useDispatch();
   const { data } = useGet("/postdata");
+  const sidedata=usePostdata()
+
+  //  const sidda:any=useMutation(sid).data
   const user=useSelector((state:any)=>{
     return state.postuser
   })
-  // const fun=async()=>{
-  //   const sidedata  = await axios.post('http://localhost:4000/user', { email: id });
-  //   dispatch(addpost(sidedata?.data));
-  //   console.log(sidedata.data)
-  // }
+  const mutation = useMutation(() => axios.post('http://localhost:4000/user', { email: id }));
+  console.log(mutation.data)
+  const fun=async()=>{
+    const sidedata  = await axios.post('http://localhost:4000/user', { email: id });
+    dispatch(adduser(sidedata?.data));
+
+  }
   useEffect(() => {
 
-// fun()
     dispatch(addpost(data?.data));
  
+fun()
   }, [data]);
   const mydata = useSelector((state: any) => {
     return state.postdata;

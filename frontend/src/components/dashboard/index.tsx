@@ -16,15 +16,15 @@ const Dash=()=>{
   const user=useSelector((state:any)=>{
     return state.postuser
   })
-  console.log(user[0].profile)
+  // console.log(user[0].profile)
  const mypostdata=mydata[0]
- console.log(mypostdata)
+
   const [sowimg,setimg]=useState()
   const [sow,set]=useState(false)
 
 const imgtext=(e:any)=>{
    setimg(e.target.files[0].name)
-  console.log(e.target.files[0].name);
+  // console.log(e.target.files[0].name);
   set(true)
 }
 const myData=usePostdata()
