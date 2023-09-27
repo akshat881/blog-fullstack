@@ -22,4 +22,5 @@ const otpmodal:Schema<Otp>=new Schema({
 
 })
 const otpmodals:Model<Otp>=mongoose.model("otpmodal",otpmodal);
+
 export default otpmodals;
